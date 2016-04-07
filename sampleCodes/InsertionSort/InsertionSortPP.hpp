@@ -6,9 +6,8 @@
 //  Copyright © 2016 Kian Davoudi. All rights reserved.
 //
 
-#ifndef InsertionSortPP_hpp
-#define InsertionSortPP_hpp
+#ifndef InsertionSortPP_h
+#define InsertionSortPP_h
 
-#include <stdio.h>
 
-#endif /* InsertionSortPP_hpp */
+#endif /* InsertionSortPP_h */
