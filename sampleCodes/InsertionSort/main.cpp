@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
     
     
     // insert a new
-    service->insertANode(head, util->initANewNodeWithKey(12));
+    //service->insertANode(head, util->initANewNodeWithKey(12));
     //service->insertAKey( head, 12);
     
     
