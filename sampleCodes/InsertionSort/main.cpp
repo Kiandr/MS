@@ -14,10 +14,26 @@ int main(int argc, const char * argv[]) {
     // Step 1: What the data structure.
     
     ISNode *head = (ISNode*)malloc(sizeof(ISNode));
-    head->Key =0;
+    ISService *service = (ISService*)malloc(sizeof(ISService));
+    Utility *util = (Utility*) malloc (sizeof(Utility));
+    //util->initANewNodeWithKey(12);
+    // initiate the head:
+    head->Key =10;
+    head->p = NULL;
+    head->l = NULL;
+    head->r = NULL;
+    
+    // initate a new node
+    //ISNode *aNewNode = (ISNode*)malloc(sizeof(ISNode));
     
     
-    std::cout<<head->Key;
+    // insert a new
+    service->insertANode(head, util->initANewNodeWithKey(12));
+    //service->insertAKey( head, 12);
+    
+    
+    
+    
     
     
     

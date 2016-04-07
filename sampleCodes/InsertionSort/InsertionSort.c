@@ -7,10 +7,11 @@
 //
 
 #include "InsertionSort.h"
+#include "stdio.h"
 
 
 // ================================================================================
-// C implementation
+// C implementation Service Layer
 // ================================================================================
 
 ISNode *max (ISNode *aNode){
@@ -39,11 +40,37 @@ ISNode *successor (ISNode *aNode){
 };
 
 
-void *add (ISNode *aNode){
+void *insertANode (ISNode *aNode){
     int *k;
     
     return k;
 };
+
+void *insertAKey (int *aKey){
+    // Initate a new node.
+    if (!aKey){
+        ISNode *tempNode = (ISNode*) malloc (sizeof(ISNode));
+        tempNode->Key = aKey;
+        tempNode->l = NULL;
+        tempNode->r = NULL;
+        tempNode->p = NULL;
+        
+    }
+    else{
+        return NULL;
+        
+    }
+    // find the location
+    
+    // Insert to the location
+
+    
+    
+    //temp satisfier for complier;
+    return &aKey;
+    
+};
+
 
 void *del (ISNode *aNode){
     int *k;
@@ -51,6 +78,26 @@ void *del (ISNode *aNode){
     return k;
 };
 
+// ================================================================================
+// C implementation Utility Layer
+// ================================================================================
 
+
+ISNode *initANewNodeWithKey (int aKey){
+    if (!aKey){
+    ISNode *tempNode = (ISNode*) malloc (sizeof(ISNode));
+        tempNode->Key = aKey;
+        tempNode->l = NULL;
+        tempNode->r = NULL;
+        tempNode->p = NULL;
+        return tempNode;
+    }
+    else{
+        return NULL;
+    
+    }
+    
+
+};
 
 

@@ -32,10 +32,17 @@ struct{
     ISNode (*procedure) (ISNode *aNode);
     ISNode (*successor) (ISNode *aNode);
     
-    void (*insert) (ISNode *aNode);
+    void (*insertANode) (ISNode *aNode);
+    void (*insertAKey) (int aKey);
     void (* del) (ISNode *aNode);
     
     
 
 }typedef ISService;
+
+struct {
+    ISNode (*initANewNodeWithKey) (int aKey);
+}typedef Utility;
+
+
 #endif /* InsertionSort_h */
