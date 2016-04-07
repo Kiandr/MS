@@ -7,8 +7,7 @@
 //
 
 #include "InsertionSort.h"
-#include "stdio.h"
-
+#include <iostream>
 
 // ================================================================================
 // C implementation Service Layer
@@ -46,7 +45,7 @@ void *insertANode (ISNode *aNode){
     return k;
 };
 
-void *insertAKey (int *aKey){
+void *insertAKey (int aKey){
     // Initate a new node.
     if (!aKey){
         ISNode *tempNode = (ISNode*) malloc (sizeof(ISNode));
@@ -83,21 +82,31 @@ void *del (ISNode *aNode){
 // ================================================================================
 
 
-ISNode *initANewNodeWithKey (int aKey){
-    if (!aKey){
-    ISNode *tempNode = (ISNode*) malloc (sizeof(ISNode));
-        tempNode->Key = aKey;
-        tempNode->l = NULL;
-        tempNode->r = NULL;
-        tempNode->p = NULL;
-        return tempNode;
-    }
-    else{
-        return NULL;
-    
-    }
-    
+//ISNode *initANewNodeWithKey (int aKey){
+//    ISNode *tempNode;
+//    
+//    if (!aKey){
+//    tempNode = (ISNode*) malloc (sizeof(ISNode));
+//        tempNode->Key = aKey;
+//        tempNode->l = NULL;
+//        tempNode->r = NULL;
+//        tempNode->p = NULL;
+//    }
+//    else{
+//        tempNode = NULL;
+//    
+//    }
+//    
+//    return tempNode;
+//    
+//};
+//
 
+ISNode *initANewNodeWithKey (int aKey){
+    
+    
+    return (ISNode*)malloc(sizeof(ISNode));;
+    
 };
 
 

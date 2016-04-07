@@ -6,22 +6,20 @@
 //  Copyright © 2016 Kian Davoudi. All rights reserved.
 //
 
-#include <iostream>
+#include "stdlib.h"
 #include "InsertionSort.h"
 int main(int argc, const char * argv[]) {
     
     // Please reffer to https://drive.google.com/folderview?id=0B1kNDgdfL1swclNicUgySnhLMXM&usp=sharing for theory.
     // Step 1: What the data structure.
     
-    ISNode *head = (ISNode*)malloc(sizeof(ISNode));
+    ISNode *head;
+    
     ISService *service = (ISService*)malloc(sizeof(ISService));
     Utility *util = (Utility*) malloc (sizeof(Utility));
-    //util->initANewNodeWithKey(12);
-    // initiate the head:
-    head->Key =10;
-    head->p = NULL;
-    head->l = NULL;
-    head->r = NULL;
+    
+    int testNumber = 10;
+     util->initANewNodeWithKey(testNumber);
     
     // initate a new node
     //ISNode *aNewNode = (ISNode*)malloc(sizeof(ISNode));
