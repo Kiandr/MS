@@ -6,10 +6,10 @@
 //  Copyright © 2016 Kian Davoudi. All rights reserved.
 //
 
-#ifndef InsertionSortPP_hpp
-#define InsertionSortPP_hpp
+#ifndef IInsertionSortPP_hpp
+#define IInsertionSortPP_hpp
 
-#include "stdlib.h"
+
 // ================================================================================
 // C method  structure of the node accordin to MIT book
 // https://drive.google.com/file/d/0B1kNDgdfL1swRTJyUTU0V0dmTW8/view?usp=sharing
@@ -45,10 +45,10 @@ public:
 // C++  method  Utility
 // https://drive.google.com/file/d/0B1kNDgdfL1swRTJyUTU0V0dmTW8/view?usp=sharing
 // ================================================================================
-class IUtility{
+class IUtilityBase{
 
 public:
-    IUtility();
+    
     virtual ISNode *initWithInt(int _key)
 //    {
 //        ISNode *_tempNode;

@@ -16,7 +16,7 @@
 // ================================================================================
 
 struct{
-    int Key;
+    int *Key;
     struct Node *p;
     struct Node *l;
     struct Node *r;
@@ -41,8 +41,81 @@ struct{
 }typedef ISService;
 
 struct {
-    ISNode (*initANewNodeWithKey) (int aKey);
+    ISNode *initANewNodeWithKey (int aKey){
+        
+        
+        //return (ISNode*)malloc(sizeof(ISNode));;
+        ISNode *_tempNode;
+        if (aKey){
+            _tempNode = (ISNode*) malloc (sizeof(ISNode));
+            _tempNode->Key = &aKey;
+            _tempNode->l = NULL;
+            _tempNode->r = NULL;
+            _tempNode->p = NULL;
+        }
+        else{
+            _tempNode = NULL;
+            
+        }
+        
+        return _tempNode;
+    };
+
 }typedef Utility;
+
+
+
+
+// ================================================================================
+// C implementation Service Layer
+// ================================================================================
+
+ISNode *max (ISNode *aNode){
+    ISNode *prtH = aNode;
+    return prtH;
+};
+
+ISNode *min (ISNode *aNode){
+    ISNode *prtH = aNode;
+    return prtH;
+};
+
+ISNode *search (ISNode *aNode){
+    ISNode *prtH = aNode;
+    return prtH;
+};
+
+ISNode *procedure (ISNode *aNode){
+    ISNode *prtH = aNode;
+    return prtH;
+};
+
+ISNode *successor (ISNode *aNode){
+    ISNode *prtH = aNode;
+    return prtH;
+};
+
+
+void *insertANode (ISNode *aNode){
+    int *k;
+    
+    return k;
+};
+
+void *insertAKey (int aKey){
+      //temp satisfier for complier;
+    return &aKey;
+    
+};
+
+void *del (ISNode *aNode){
+    int *k;
+    
+    return k;
+};
+
+
+
 
 
 #endif /* InsertionSort_h */
