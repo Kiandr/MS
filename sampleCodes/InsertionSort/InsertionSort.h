@@ -15,43 +15,106 @@
 // https://drive.google.com/file/d/0B1kNDgdfL1swRTJyUTU0V0dmTW8/view?usp=sharing
 // ================================================================================
 
-struct{
-    int *Key;
+typedef struct{
+    double *key;
     struct Node *p;
     struct Node *l;
     struct Node *r;
+    struct Node *next;
     
-}typedef ISNode;
+    
+} ISNode;
 // ================================================================================
 // C method to define vital operations
 // ================================================================================
 struct{
-    ISNode (*max) (ISNode *aNode);
-    ISNode (*min) (ISNode *aNode);
-    ISNode (*serach) (ISNode *aNode);
-    ISNode (*procedure) (ISNode *aNode);
-    ISNode (*successor) (ISNode *aNode);
     
-    void (*insertANode) (ISNode *aNode);
-    void (*insertAKey) (int aKey);
-    void (* del) (ISNode *aNode);
+    ISNode *head;
+    
+    ISNode *max (ISNode *aNode){
+        ISNode *prtH = aNode;
+        return prtH;
+    };
+    
+    ISNode *min (ISNode *aNode){
+        ISNode *prtH = aNode;
+        return prtH;
+    };
+    
+    ISNode *search (ISNode *aNode){
+        ISNode *prtH = aNode;
+        return prtH;
+    };
+    
+    ISNode *procedure (ISNode *aNode){
+        ISNode *prtH = aNode;
+        return prtH;
+    };
+    
+    ISNode *successor (ISNode *aNode){
+        ISNode *prtH = aNode;
+        return prtH;
+    };
+    
+    
+    void *insertANode (ISNode *aNode){
+        // set pointers
+        ISNode *prtToH = head;
+        
+        
+        // set pointer
+        if (head==NULL)
+        {
+            head = aNode;
+            return this;
+        }
+        // transverse
+        while(prtToH->l || prtToH->r)
+        {
+            // right navigate
+            if (*prtToH->key < *aNode->key)
+            {
+                prtToH = (ISNode*)prtToH->r;
+            }
+            // right navigate
+        else{
+            prtToH = (ISNode*)prtToH->l;
+             }
+        }
+        
+        if (*prtToH->key < *aNode->key)
+        {
+            aNode->p = (Node*) prtToH;
+            prtToH->r =(Node*) aNode;
+        }
+        else {
+            aNode->p  = (Node*) prtToH;
+            prtToH->l = (Node*) aNode;
+        }        
+        return this;
+    };
+    
+    void *del (ISNode *aNode){
+        int *k;
+        
+        return k;
+    };
     
     
 
 }typedef ISService;
 
 struct {
-    ISNode *initANewNodeWithKey (int aKey){
-        
-        
-        //return (ISNode*)malloc(sizeof(ISNode));;
+    ISNode *initANewNodeWithKey (double aKey){
         ISNode *_tempNode;
         if (aKey){
             _tempNode = (ISNode*) malloc (sizeof(ISNode));
-            _tempNode->Key = &aKey;
-            _tempNode->l = NULL;
-            _tempNode->r = NULL;
-            _tempNode->p = NULL;
+            _tempNode->key  = &aKey;
+            _tempNode->l    = NULL;
+            _tempNode->r    = NULL;
+            _tempNode->p    = NULL;
+            _tempNode->next = NULL;
+            
         }
         else{
             _tempNode = NULL;
@@ -61,59 +124,14 @@ struct {
         return _tempNode;
     };
 
-}typedef Utility;
+}typedef IUtility;
 
 
 
 
 // ================================================================================
-// C implementation Service Layer
+// C implementation Service Layer should take place inside the struct,otherwise the struct does not know where to find address of the implementation.
 // ================================================================================
-
-ISNode *max (ISNode *aNode){
-    ISNode *prtH = aNode;
-    return prtH;
-};
-
-ISNode *min (ISNode *aNode){
-    ISNode *prtH = aNode;
-    return prtH;
-};
-
-ISNode *search (ISNode *aNode){
-    ISNode *prtH = aNode;
-    return prtH;
-};
-
-ISNode *procedure (ISNode *aNode){
-    ISNode *prtH = aNode;
-    return prtH;
-};
-
-ISNode *successor (ISNode *aNode){
-    ISNode *prtH = aNode;
-    return prtH;
-};
-
-
-void *insertANode (ISNode *aNode){
-    int *k;
-    
-    return k;
-};
-
-void *insertAKey (int aKey){
-      //temp satisfier for complier;
-    return &aKey;
-    
-};
-
-void *del (ISNode *aNode){
-    int *k;
-    
-    return k;
-};
-
 
 
 

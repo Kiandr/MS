@@ -19,8 +19,64 @@ int main(int argc, const char * argv[]) {
     
     
     // This is a c format
-    Utility *util =(Utility*)malloc(sizeof(Utility));
-    std::cout<<*util->initANewNodeWithKey(12)->Key;
+    IUtility    *util =(IUtility*)malloc(sizeof(IUtility));
+    
+    
+    ISService *service = (ISService*)malloc(sizeof(ISService));
+    ISNode* head = util->initANewNodeWithKey(10.00);
+    
+    service->insertANode(head);
+    service->insertANode(util->initANewNodeWithKey(12.00));
+    service->insertANode(util->initANewNodeWithKey(9.00));
+    service->insertANode(util->initANewNodeWithKey(13.00));
+    service->insertANode(util->initANewNodeWithKey(7.00));
+    service->insertANode(util->initANewNodeWithKey(15.00));
+    service->insertANode(util->initANewNodeWithKey(5.00));
+    service->insertANode(util->initANewNodeWithKey(17.00));
+    service->insertANode(util->initANewNodeWithKey(3.00));
+    service->insertANode(util->initANewNodeWithKey(19.00));
+    service->insertANode(util->initANewNodeWithKey(1.00));
+    
+    
+        
+        ISNode* prt = (ISNode*) service->head;
+        while (prt->r !=NULL)
+        {
+            
+            std::cout<<prt->key;
+            prt = (ISNode*) prt->r;
+        }
+    
+    
+
+    
+    /*
+    int InputR[] = {12,14,16};
+    int InputL[] = {11,13,15};
+    int *prtToInputR = InputR;
+    int *prtToInputL = InputL;
+    
+    while ((*prtToInputR)&&(*prtToInputR>0)){
+        
+        service->insertANode(util->initANewNodeWithKey(*prtToInputR));
+        prtToInputR++;
+        
+    
+    };
+    
+    while ((*prtToInputL)&&(*prtToInputL>0)){
+        
+        service->insertANode(util->initANewNodeWithKey(*prtToInputL));
+        prtToInputL++;
+    };
+    
+    
+    */
+    
+    
+    free(util);
+    
+    
     
     //    ISNode *head =
     //util->initWithInt(input);
