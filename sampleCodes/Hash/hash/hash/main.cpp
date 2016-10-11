@@ -1,9 +1,10 @@
 #include "lib.h"
 #include "iostream"
 
-void main() {
+int main() {
 
 	serviceHash *serviceCallHash = (serviceHash*)malloc(sizeof(serviceHash));
-
+	serviceCallHash->hashInsertNode("K");
+		return 0;
 
 };
