@@ -1,14 +1,14 @@
 // basic opeartions of the hash table
 #include "malloc.h"
 #include "iostream"
-typedef struct HashNode {
+typedef struct HashNodePP {
 	char val[10];
-}node;
+}nodePP;
 
-struct {
+class IServiceHashPP {
 
+public:
 	void print() {
-		std::cout << "test";
+		std::cout << "testP";
 	};
-
-}typedef ISService;
+};

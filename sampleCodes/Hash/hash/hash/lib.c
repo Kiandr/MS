@@ -1,14 +1,15 @@
+
 // basic opeartions of the hash table
 #include "malloc.h"
 #include "iostream"
 typedef struct HashNode {
 	char val[10];
-}node;
+	}node;
 
-struct {
+	struct {
 
-	void print() {
-		std::cout << "test";
-	};
+		void print() {
+				std::cout << "test";
+					};
 
-}typedef ISService;
+					}typedef ISService;
