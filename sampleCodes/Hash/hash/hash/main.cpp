@@ -8,8 +8,14 @@ int main() {
 	ISService *service = (ISService*)malloc(sizeof(ISService));
 	service->print();
 
+	// Header
+	HashNode *header = (HashNode*)malloc(sizeof(HashNode));
+	char t[] = "KianDavoudi";
+	header->val = t;
+
 	IServiceHashPP *serviceP = new IServiceHashPP();
-	serviceP->print();
+	//serviceP->print();
+	service->Insert(header,"O",1);
 	return 0;
 
 
