@@ -14,8 +14,10 @@ int main() {
 	header->val = t;
 
 	IServiceHashPP *serviceP = new IServiceHashPP();
-	//serviceP->print();
-	service->Insert(header,"O",1);
+
+	//  this rule applies all the time "index < t"
+	service->Insert(header,"O",11);
+	service->Del(header, 11);
 	return 0;
 
 
