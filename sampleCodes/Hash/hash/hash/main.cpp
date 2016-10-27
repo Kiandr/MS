@@ -18,6 +18,7 @@ int main() {
 	//  this rule applies all the time "index < t"
 	service->Insert(header,"O",11);
 	service->Del(header, 11);
+	std::cout<<service->Search(header,"a");
 	return 0;
 
 

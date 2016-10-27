@@ -45,6 +45,26 @@ struct {
 		return 1;
 	};
 
+	int Search(HashNode *header, char *val) {
+	// check for the header
+		if (!header)
+		{
+			return 0;
+		}
+
+		char *prtVal = val;
+		char *prtHead = header->val;
+		int i = 0;
+		while (*prtHead != '\n')
+		{
+			if (*prtVal == *prtHead)
+				return i;
+			i++;
+			
+			prtHead++;
+		}
+		return i;
+	};
 
 
 }typedef ISService;
