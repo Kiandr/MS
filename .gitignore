@@ -28,3 +28,6 @@
 *.app
 /sampleCodes/Hash/hash/*.db
 /sampleCodes/Hash/hash/.vs/hash/v14/*.suo
+/sampleCodes/BST/.vs
+/sampleCodes/BST/Debug
+/sampleCodes/BST/*.db
