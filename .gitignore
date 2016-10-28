@@ -26,3 +26,5 @@
 *.exe
 *.out
 *.app
+/sampleCodes/Hash/hash/*.db
+/sampleCodes/Hash/hash/.vs/hash/v14/*.suo
