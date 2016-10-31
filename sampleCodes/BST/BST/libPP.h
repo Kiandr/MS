@@ -6,7 +6,5 @@
 class IServiceHashPP {
 
 public:
-	void print() {
-		std::cout << "testP";
-	};
+
 };
