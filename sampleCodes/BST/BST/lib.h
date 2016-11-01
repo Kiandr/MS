@@ -34,14 +34,14 @@ struct {
 	};
 
 
-	lNode *BuildNewNode(lNode *prtToNode,char *chVar, int inVar) {
+	lNode *BuildNewNode(lNode *prtSuccessor,char *chVar, int inVar) {
 
 		static lNode *newNode = (lNode*)malloc(sizeof(lNode));
 		newNode->valChar = *chVar;
 		newNode->valInt = inVar;
 		newNode->right = NULL;
 		newNode->left = NULL;
-		newNode->successor = prtToNode;
+
 		return (lNode*)newNode;
 
 	};
@@ -64,7 +64,7 @@ struct {
 		}
 		return prev;
 	};
-		
+	
 
 
 }typedef CommonServices;
@@ -78,26 +78,38 @@ struct {
 		lNode *prtToHeader = header;
 		lNode *prev = prtToHeader;
 		// Check if the Pointer to the header is still pointing to the existing one
-		if ((prtToHeader->left != NULL) && (prtToHeader->right != NULL)) {
-
+		if (!(prtToHeader->left == nullptr) && (prtToHeader->right == nullptr)) {
 			// 
 			if (prtToHeader->valInt > inVar)
 				Insert(prtToHeader->left, chVar, inVar);
 			else if (prtToHeader->valInt < inVar)
 				Insert(prtToHeader->right, chVar, inVar);
 		}
-
-		// Now we are at leaf, check val and add the val 
-		if (prtToHeader->valInt > inVar)
-			prtToHeader->left = comServ->BuildNewNode(prtToHeader,chVar, inVar);
-		if (prtToHeader->valInt < inVar)
-			prtToHeader->right = comServ->BuildNewNode(prtToHeader, chVar, inVar);
-
-		return prtToHeader;
+		else{
+			// Now we are at leaf, check val and add the val 
+			if (prtToHeader->valInt > inVar)
+				prtToHeader->left = comServ->BuildNewNode(prtToHeader->successor, chVar, inVar);
+			if (prtToHeader->valInt < inVar)
+				prtToHeader->right = comServ->BuildNewNode(prtToHeader->successor, chVar, inVar);
+		}
+		return header;
 
 	};
-
-	void Search() {};
+	// Search recursively for the Node and return the node
+	lNode *Search(lNode* header, int inVar) {
+	// Is there any Header
+		lNode *prtHeader = header;
+	// Recursively serch for left or right 
+		if (prtHeader->valInt != inVar)
+		{
+			if (prtHeader->valInt < inVar)
+				prtHeader = prtHeader->right;
+			else if (prtHeader->valInt > inVar)
+				prtHeader = prtHeader->left;
+		}
+		return prtHeader;
+	
+	};
 	void Delete() {};
 	void Min() {};
 	void Max() {};

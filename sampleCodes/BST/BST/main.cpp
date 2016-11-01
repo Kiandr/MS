@@ -8,8 +8,11 @@ int main() {
 	LService *lService = (LService*)malloc(sizeof(LService));
 	CommonServices *comServ = (CommonServices*)malloc(sizeof(CommonServices));
 	char t = 's';
-	lNode *header = comServ->BuildAHeader(&t,47);
+	lNode *header = comServ->BuildAHeader(&t,50);
 	lService->Insert(header, "I", 10);
+	lService->Insert(header, "A", 1);
+	//lService->Insert(header, "N", 51);
+	//lService->Insert(header, "D", 52);
 	return 0;
 
 
