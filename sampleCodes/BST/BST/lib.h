@@ -17,7 +17,6 @@ typedef struct tNode {
 	char valChar;
 	int valInt;
 }tnode;
-
 struct {
 
 	lNode *BuildAHeader(char *chVar, int inVar) {
@@ -25,8 +24,11 @@ struct {
 		static lNode *newNode = (lNode*)malloc(sizeof(lNode));
 		newNode->valChar = *chVar;
 		newNode->valInt = inVar;
-		newNode->successor = nullptr;
-		newNode->next = nullptr;
+		newNode->successor = NULL;
+		// Forgot this part of the code
+		// Left and Right should be NULL
+		newNode->left = NULL;
+		newNode->right = NULL;
 		return (lNode*)newNode;
 
 	};
@@ -37,7 +39,8 @@ struct {
 		static lNode *newNode = (lNode*)malloc(sizeof(lNode));
 		newNode->valChar = *chVar;
 		newNode->valInt = inVar;
-		newNode->next = nullptr;
+		newNode->right = NULL;
+		newNode->left = NULL;
 		newNode->successor = prtToNode;
 		return (lNode*)newNode;
 
@@ -45,78 +48,52 @@ struct {
 
 	lNode *findLeaf(lNode *prtToHeader,int inVar) {
 		// Recursive Method
-
+		// reserved pointer
+		lNode *prev = NULL;
 		while (prtToHeader) {
 			//if (prtToHeader->left != NULL && prtToHeader->right != NULL) {
 				if (prtToHeader->valInt < inVar) {
-					prtToHeader = prtToHeader->right;
+					prev = prtToHeader;
+					findLeaf(prtToHeader->right, inVar);
 				}
 				if (prtToHeader->valInt > inVar) {
-					prtToHeader = prtToHeader->left;
+					prev = prtToHeader;
+					findLeaf(prtToHeader->left, inVar);
 				}
 			//}
 		}
-		return prtToHeader;
+		return prev;
 	};
 		
 
 
 }typedef CommonServices;
-
-
-
+// LinkedList Operatioin
 struct {
 	CommonServices *comServ;
 	// Header should be initated in main function;
-
-	int Insert(lNode *header, char *chVar, int inVar) {
-		// fill the header 
+	// Based on this link: http://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
+	lNode *Insert(lNode *header, char *chVar, int inVar) {
+		// pointers that are being used.  
 		lNode *prtToHeader = header;
 		lNode *prev = prtToHeader;
-		int resultOfFunction = 0;
-		if (header != nullptr)
-		{
+		// Check if the Pointer to the header is still pointing to the existing one
+		if ((prtToHeader->left != NULL) && (prtToHeader->right != NULL)) {
 
-			// continue while searching to for the node
-
-
-				// find leave (prtToHeader)
-			prev = comServ->findLeaf(prtToHeader, inVar);
-
-			//	// if prtHeader->val<inVar
-			//	if (prtToHeader->valInt < inVar) {
-			//		prev = prtToHeader;
-			//		prtToHeader = prtToHeader->right;
-			//	}
-			//	// go Right 
-			//	// ifelse prtHeader->val>inVar
-			//	// go Left
-			//	if (prtToHeader->valInt > inVar) {
-			//		prev = prtToHeader;
-			//		prtToHeader = prtToHeader->left;
-			//	}
-
-			//}
-
-			// Found the child node, addAnewNode int it
-			///
-			//if (prev->valInt < inVar) {
-			//	// if prtHeader->val<inVar
-			//	// Add to Right 
-			//	prev->right = comServ->BuildNewNode(prev, chVar, inVar);
-			//}
-			//// ifelse prtHeader->val>inVar
-			//if (prev->valInt < inVar) {
-			//	// Add to Left
-			//	prev->left = comServ->BuildNewNode(prev, chVar, inVar);
-			//	///
-			//}
-			//// Successfull insertion
-			//resultOfFunction = 1;
-
+			// 
+			if (prtToHeader->valInt > inVar)
+				Insert(prtToHeader->left, chVar, inVar);
+			else if (prtToHeader->valInt < inVar)
+				Insert(prtToHeader->right, chVar, inVar);
 		}
-		// return result of insertion 
-		return resultOfFunction;
+
+		// Now we are at leaf, check val and add the val 
+		if (prtToHeader->valInt > inVar)
+			prtToHeader->left = comServ->BuildNewNode(prtToHeader,chVar, inVar);
+		if (prtToHeader->valInt < inVar)
+			prtToHeader->right = comServ->BuildNewNode(prtToHeader, chVar, inVar);
+
+		return prtToHeader;
 
 	};
 
@@ -129,7 +106,6 @@ struct {
 
 
 }typedef LService;
-
 struct {
 
 
