@@ -78,7 +78,7 @@ struct {
 		lNode *prtToHeader = header;
 		lNode *prev = prtToHeader;
 		// Check if the Pointer to the header is still pointing to the existing one
-		if (!(prtToHeader->left == nullptr) && (prtToHeader->right == nullptr)) {
+		if (!(prtToHeader->left == nullptr) && !(prtToHeader->right == nullptr)) {
 			// 
 			if (prtToHeader->valInt > inVar)
 				Insert(prtToHeader->left, chVar, inVar);
@@ -108,7 +108,6 @@ struct {
 				prtHeader = prtHeader->left;
 		}
 		return prtHeader;
-	
 	};
 	void Delete() {};
 	void Min() {};
