@@ -1,5 +1,6 @@
-#include <stdio.h>
 #include "lib.h"
+#include "stdio.h"
+#include "stdlib.h"
 
 
 int main() {
@@ -14,8 +15,9 @@ int main() {
 	node *testedInsertTo130 = Insert(testedHeader, 130);
 	node *testedInsertTo210 = Insert(testedHeader, 210);
 
+	node *testerNode = BuildNewNode(15);
 
-
+	node *tesSearch = Search(testedHeader, 15);
 
 
 

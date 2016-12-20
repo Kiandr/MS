@@ -23,19 +23,21 @@ void HelloWorld()
 
 	return header;
 }
- node * Seach(node * prtToH, node *InNode)
+ node * Search(node * prtToH, int InNode)
  {
 	 // place holder for header
 	 node *prt = prtToH;
 
-	 
-	 // in order, pre order and post order 
-	 if (prt->val > InNode->val && !(prt->left==NULL))
-		 Seach(prtToH->left, InNode);
-	 if (prt->val < InNode->val && !(prt->right == NULL))
-		 Seach(prtToH->right, InNode);
+	 if (prt->val == InNode)
+		 return prt;
 
-	 return prtToH;
+	 // in order, pre order and post order 
+	 if (prt->val >InNode && !(prt->left==NULL))
+		return  Search(prtToH->left, InNode);
+	 if (prt->val < InNode && !(prt->right == NULL))
+		 return Search(prtToH->right, InNode);
+
+	
 
 
 
