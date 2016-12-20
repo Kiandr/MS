@@ -4,17 +4,21 @@
 
 int main() {
 
-	HelloWorld();
+	
 	node *test = NULL;
-	test  = InitHeader(test);
+	node *testedHeader  = InitHeader(test,100);
+	node *testedInsertToRight = Insert(testedHeader, 160);
+	node *testedInsertToLeft = Insert(testedHeader, 30);
+	node *testedInsertTo45 = Insert(testedHeader, 45);
+	node *testedInsertTo15 = Insert(testedHeader, 15);
+	node *testedInsertTo130 = Insert(testedHeader, 130);
+	node *testedInsertTo210 = Insert(testedHeader, 210);
 
-	//CommonServices *comServ = (CommonServices*)malloc(sizeof(CommonServices));
-	//BSTService *service = (BSTService*)malloc(sizeof(BSTService));
-	//lNode *header = NULL;
-	//header = service->Insert(header, "K", 50);
-	//service->Insert(header, "I", 30);
-	//service->Insert(header, "A", 20);
-	//service->Insert(header, "N", 40);
+
+
+
+
+
 
 
 

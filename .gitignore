@@ -31,3 +31,12 @@
 /sampleCodes/BST/.vs
 /sampleCodes/BST/Debug
 /sampleCodes/BST/*.db
+/sampleCodes/BST/*.opendb
+/sampleCodes/BST/BST/x64/Debug/*.log
+/sampleCodes/BST/BST/x64/Debug/BST.tlog/*.lastbuildstate
+/sampleCodes/BST/BST/x64/Debug/BST.tlog/*.tlog
+/sampleCodes/BST/BST/x64/Debug/*.enc
+/sampleCodes/BST/BST/x64/Debug/*.idb
+/sampleCodes/BST/BST/x64/Debug/*.pdb
+/sampleCodes/BST/x64/Debug/*.ilk
+/sampleCodes/BST/x64/Debug/*.pdb

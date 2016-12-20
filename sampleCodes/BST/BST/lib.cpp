@@ -7,20 +7,76 @@ void HelloWorld()
 	printf("TEST");
 
 }
-
- node * InitHeader(node * prtToH)
+ node * InitHeader(node * prtToH, int inVar)
 {
 	int i = 10;
 
 	node *header = (node*)malloc(sizeof(node));
-	header->left = NULL;
-	header->left = NULL;
+	header->left = nullptr;
+	header->right = nullptr;
 	while (i)
 	{
 		*(header->stringHolder + (10-i) ) = "E";
 		i--;
 	}
-	header->val = 0;
+	header->val = inVar;
 
 	return header;
 }
+ node * Seach(node * prtToH, node *InNode)
+ {
+	 // place holder for header
+	 node *prt = prtToH;
+
+	 
+	 // in order, pre order and post order 
+	 if (prt->val > InNode->val && !(prt->left==NULL))
+		 Seach(prtToH->left, InNode);
+	 if (prt->val < InNode->val && !(prt->right == NULL))
+		 Seach(prtToH->right, InNode);
+
+	 return prtToH;
+
+
+
+
+ }
+ node * Insert(node *prtToHead, int inVar) {
+ 
+	 // pointers that are being used.  
+	 node *prtToHeader = prtToHead;
+	 node *prev = prtToHeader;
+	 // Check if the Pointer to the header is still pointing to the existing one
+	 if (!(prtToHeader->left == nullptr) && !(prtToHeader->right == nullptr)) {
+		 // 
+		 if (prtToHeader->val > inVar)
+			 Insert(prtToHeader->left, inVar);
+		 else if (prtToHeader->val < inVar)
+			 Insert(prtToHeader->right, inVar);
+	 }
+	 else {
+		 // Now we are at leaf, check val and add the val 
+		 if (prtToHeader->val > inVar)
+			 prtToHeader->left = BuildNewNode(inVar);
+		 if (prtToHeader->val < inVar)
+			 prtToHeader->right = BuildNewNode( inVar);
+	 }
+	 return prtToHead;
+ }
+ node * BuildNewNode(int inVar)
+ {
+	 int i = 10;
+
+	 node *header = (node*)malloc(sizeof(node));
+	 header->right = nullptr;
+	 header->left = nullptr;
+	 while (i)
+	 {
+		 *(header->stringHolder + (10 - i)) = "E";
+		 i--;
+	 }
+	 header->val = inVar;
+
+	 return header;
+ }
+ // 1- What is the possiblity of transversing safely?
