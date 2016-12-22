@@ -8,17 +8,17 @@ int main() {
 	
 	node *test = NULL;
     node *testedHeader  = InitHeader(test,120);
-	node *testedInsertToRight = Insert(testedHeader, 180);
-	node *testedInsertToLeft = Insert(testedHeader, 30);
-	node *testedInsertTo45 = Insert(testedHeader, 45);
-	node *testedInsertTo15 = Insert(testedHeader, 15);
-	node *testedInsertTo130 = Insert(testedHeader, 130);
+	node *testedInsertToRight = Insert(testedHeader, 60);
+	node *testedInsertToLeft = Insert(testedHeader, 180);
+	node *testedInsertTo45 = Insert(testedHeader, 30);
+	node *testedInsertTo15 = Insert(testedHeader, 90);
+	node *testedInsertTo130 = Insert(testedHeader, 150);
 	node *testedInsertTo210 = Insert(testedHeader, 210);
     node *testedInsertTo310 = Insert(testedHeader, 310);
 
-	node *testerNode = BuildNewNode(15);
 
 	node *tesSearch = Search(testedHeader, 15);
+	InOrderWalk(testedHeader);
 
 
 

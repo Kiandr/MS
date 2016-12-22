@@ -81,4 +81,21 @@ void HelloWorld()
 
 	 return header;
  }
- // 1- What is the possiblity of transversing safely?
+ void InOrderWalk(node *prtToH) {
+ // get min; 
+	 if (prtToH == NULL)
+		 return;
+	 
+	 InOrderWalk(prtToH->left);
+	 printf("%d\n", prtToH->val);
+	 InOrderWalk(prtToH->right);
+	 
+ };
+
+ node * Min(node * prtToH) {
+	 if (prtToH->left != NULL)
+	 {
+		 prtToH = Min(prtToH);
+	 }
+	 return prtToH;
+ };

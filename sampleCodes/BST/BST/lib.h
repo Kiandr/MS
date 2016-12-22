@@ -12,6 +12,7 @@ extern node *InitHeader( node *prtToH, int inVar);
 extern node *Search(node * prtToH, int InNode);
 extern node *Insert(node * portToH, int InNode);
 extern node *BuildNewNode(int val);
+extern void InOrderWalk(node *prtToh);
 #endif // LIB_H_
 
 
