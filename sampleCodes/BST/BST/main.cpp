@@ -14,6 +14,7 @@ int main() {
 	node *testedInsertTo15 = Insert(testedHeader, 15);
 	node *testedInsertTo130 = Insert(testedHeader, 130);
 	node *testedInsertTo210 = Insert(testedHeader, 210);
+    node *testedInsertTo210 = Insert(testedHeader, 310);
 
 	node *testerNode = BuildNewNode(15);
 
