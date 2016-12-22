@@ -9,9 +9,9 @@ typedef  struct node {
 };
 extern void HelloWorld();
 extern node *InitHeader( node *prtToH, int inVar);
-extern node * Search(node * prtToH, int InNode);
+extern node *Search(node * prtToH, int InNode);
 extern node *Insert(node * portToH, int InNode);
-extern node * BuildNewNode(int val);
+extern node *BuildNewNode(int val);
 #endif // LIB_H_
 
 
