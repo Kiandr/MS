@@ -22,11 +22,9 @@ int main() {
 //	node *tesSearch = Search(testedHeader, 15);
 
 
-<<<<<<< .mine
-    printf("test\n");
-=======
+
     printf("End of the function !! \n");
->>>>>>> .theirs
+
 
 
 
