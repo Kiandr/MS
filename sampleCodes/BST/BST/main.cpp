@@ -14,14 +14,14 @@ int main() {
 	node *testedInsertTo15 = Insert(testedHeader, 15);
 	node *testedInsertTo130 = Insert(testedHeader, 130);
 	node *testedInsertTo210 = Insert(testedHeader, 210);
-    node *testedInsertTo210 = Insert(testedHeader, 310);
+    node *testedInsertTo310 = Insert(testedHeader, 310);
 
 	node *testerNode = BuildNewNode(15);
 
 	node *tesSearch = Search(testedHeader, 15);
 
 
-
+    printf("test\n");
 
 
 
