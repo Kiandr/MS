@@ -3,8 +3,9 @@
 
 int main(){
 	
-	int respond = getFabenacciNumber(0);
-	printf("this is the respond [%d] \n", respond);
+
+	for (int i=0; i<6;i++)
+	printf("this is the respond [%d] \n", getFabenacciNumber(i));
 	
 	return 0;
 }
