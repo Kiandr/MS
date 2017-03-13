@@ -16,8 +16,8 @@ double breadth;
 
 @implementation Box
 // synghesize tells compiler to build getter/setter
-@synghesize height; 
 
+@synghesize height; 
 // this is custroctore
 -(id) init 
 {
