@@ -12,7 +12,7 @@ void *partition(int *prt,int len){
 	
 	while (*prtTransvers>=0)
 {
-
+c                                                              
 	if (*prt>*prtTransvers)
 	{
 	prtCardOpen = prtTransvers;
