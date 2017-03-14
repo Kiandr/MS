@@ -1,3 +1,4 @@
+#include "stdio.h"
 void Swap(int *a, int *b)
 {
 
@@ -6,34 +7,48 @@ void Swap(int *a, int *b)
 	*b = temp;
 }
 
+
+
 int *Partition(int *prtL, int *prtR, int *prtP) {
+	while (!(prtL == prtR)) {
+		if (*prtL < *prtP)
+			prtL++;
+		else if (*prtR >= *prtP)
+			prtR--;
 
-	if (*prtL<*prtP)
-		prtL++;
-	else if (*prtR >= *prtP)
-		prtR--;
-
-	else
-		Swap(prtL, prtR);
+		else
+			Swap(prtL, prtR);
 
 
-
-	return prtL;
+		//unsigned char *byte = (unsigned char *)((unsigned char*)prtL - (unsigned char*)prtR);
+	}
+	return (0);
 }
 
 
 
  int QS(int *prtL, int *prtR) {
 
-	int *PartitionVar = nullptr;
+	 int len = n / 2;
 
-	if(*prtL - *prtR <= 0)
+	if(prtL == prtR )
 		return 0;
 	else {
 
-		PartitionVar = Partition(prtL, prtR, prtR);
-		QS(prtL, PartitionVar - 1);
-		QS(PartitionVar + 1, prtR);
+		Partition(prtL, prtR, prtPivot);
+		int *prtToPrtL = prtL;
+		while (n-- > 0)
+			printf("-%d-",*prtToPrtL++);
+
+
+		int midd = ((len - 1 / 2));
+		int *NewPrtR = (prtL + midd - 2);
+		int *NewPrtL = (prtL + midd + 2);
+		int *newprtprtPivotL = (prtL + midd - 1);
+		int *newprtprtPivotR = (prtL + midd + 1);
+
+		QS(prtL, NewPrtR, newprtprtPivotL,len);
+		//QS(NewPrtL , prtR , newprtprtPivotR, len);
 	}
 	return *prtL;
 }
@@ -41,6 +56,6 @@ int *Partition(int *prtL, int *prtR, int *prtP) {
 int main() {
 
 	int array[] = { 35,33,42,10,14,19,27,44,26,31 };
-	QS((array + 8), (array + 9));
+	QS((array), (array + 8), (array + 9),10);
 	return 0;
 }
