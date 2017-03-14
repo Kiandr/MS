@@ -19,12 +19,14 @@ void quick_sort (int *a, int n) {
             r--;
         }
     }
-    quick_sort(a, r - a + 1);
-    quick_sort(l, a + n - l);
+	int nleft = r - a + 1;
+	int nRight = a + n - l;
+    quick_sort(a, nleft);
+    quick_sort(l, nRight);
 }
 
 int main () {
-    int a[] = {4, 65, 2, -31, 0, 99, 2, 83, 782, 1};
+    int a[] = {35,33,42,10,14,19,27,44,26,31};
     int n = sizeof a / sizeof a[0];
     quick_sort(a, n);
     return 0;

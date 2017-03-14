@@ -14,7 +14,9 @@ you can add anything of type id to an NSArray, but those objects must respond to
 */
 
 @protocol PrintProtocolDelegate
--(void) processCompleted;0
+// in iOS 10 above
+@required
+-(void) processCompleted;
 @end 
 
 @interface PrintClass:NSObject
@@ -26,3 +28,49 @@ id delegate;
 -(void) printDetails;
 -(void) setDelegate: (id) newDelegate
 @end
+
+@implementations printClass
+-(void) printDetails{
+NSLog(@"Print Detail method");
+
+}
+
+-(void) setDelegate: (id) newDelegate{
+delegate = newDelegate;
+
+}
+
+@end
+
+
+/* Dont have to implement or reffee to the protocol required memeber in interface, but implementation*/
+@interface sampleClass:NSobject <PrintProtocolDelegate>
+-(void) startAction;
+
+@end
+
+@implementation SampleClass{
+// this is the interface requied method
+-(void) startAction{
+PrintClass *printClass [[PrintCloass alloc]init];
+[printClass setDelegate:self];
+[printClass printDetails];
+
+}
+// This is the protocol implementation
+-(void) processCompleted{
+NSLog(@"Print Process Completed");
+}
+
+}
+
+int main(int argc, const char * argv[]){
+NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+
+SampleClass *sampleClass = [[SampleClass alloc]init];
+[sampleClass startAction];
+
+
+return 0;
+}
+
