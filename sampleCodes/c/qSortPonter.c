@@ -31,7 +31,7 @@ void quick_sort (int *a, int n) {
 }
 
 //int main () {
-//    int a[] = {35,33,42,10,14,19,27,44,26,31};
+//    int a[] = { 35,33,42,10,14 };
 //    int n = sizeof a / sizeof a[0];
 //    quick_sort(a, n);
 //    return 0;
