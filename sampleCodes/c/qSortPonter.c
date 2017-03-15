@@ -1,3 +1,4 @@
+#include "stdio.h"
 void quick_sort (int *a, int n) {
     if (n < 2)
         return;
@@ -21,16 +22,20 @@ void quick_sort (int *a, int n) {
     }
 	int nleft = r - a + 1;
 	int nRight = a + n - l;
+	printf("--nleft--%d--", nleft);
+	
+	printf("nRight--%d--", nRight);
+	printf("\n");
     quick_sort(a, nleft);
     quick_sort(l, nRight);
 }
 
-int main () {
-    int a[] = {35,33,42,10,14,19,27,44,26,31};
-    int n = sizeof a / sizeof a[0];
-    quick_sort(a, n);
-    return 0;
-}
+//int main () {
+//    int a[] = {35,33,42,10,14,19,27,44,26,31};
+//    int n = sizeof a / sizeof a[0];
+//    quick_sort(a, n);
+//    return 0;
+//}
 
 
 //  [1]: https://www.cse.ust.hk/~dekai/271/notes/L01a/quickSort.pdf
