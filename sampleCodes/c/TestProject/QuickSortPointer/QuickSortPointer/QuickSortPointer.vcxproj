@@ -110,8 +110,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\qSortPonter.c" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\..\qSort.c" />
+    <ClCompile Include="..\..\..\qSortPrt.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

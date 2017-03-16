@@ -32,12 +32,12 @@ void quick_sort (int *a, int n) {
     quick_sort(l, nRight);
 }
 
-int main () {
-    int a[] = { 35,33,42,10,14 };
-    int n = sizeof a / sizeof a[0];
-    quick_sort(a, n);
-    return 0;
-}
+//int main () {
+//    int a[] = { 35,33,42,10,14 };
+//    int n = sizeof a / sizeof a[0];
+//    quick_sort(a, n);
+//    return 0;
+//}
 
 
 //  [1]: https://www.cse.ust.hk/~dekai/271/notes/L01a/quickSort.pdf
