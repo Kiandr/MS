@@ -2,7 +2,7 @@
 
 
 
-void quickSort(int *array, int n){
+void NavigateThroughPointerArrayWithTwoPointer(int *array, int n){
 	
 	
 	int *prtL = array;
@@ -18,13 +18,13 @@ void quickSort(int *array, int n){
 	
 }
 
-int main(){
-
-	int array [] = {35,33,42,10,14,19,27,44,26,31};
-	quickSort(array, sizeof(array)/sizeof(int));
-	
-	return 0;
-}
+//int main(){
+//
+//	int array [] = {35,33,42,10,14,19,27,44,26,31};
+//	NavigateThroughPointerArrayWithTwoPointer(array, sizeof(array)/sizeof(int));
+//	
+//	return 0;
+//}
 
 
 /*

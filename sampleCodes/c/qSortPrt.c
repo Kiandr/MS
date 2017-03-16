@@ -1,5 +1,5 @@
 #include "stdio.h"
-void quick_sort (int *a, int n) {
+void qSortPrt(int *a, int n) {
     if (n < 2)
         return;
     int p = a[n / 2];
@@ -28,8 +28,8 @@ void quick_sort (int *a, int n) {
 	
 	printf("nRight--%d--", nRight);
 	printf("\n");
-    quick_sort(a, nleft);
-    quick_sort(l, nRight);
+	qSortPrt(a, nleft);
+	qSortPrt(l, nRight);
 }
 
 //int main () {

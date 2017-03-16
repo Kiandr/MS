@@ -1,31 +1,32 @@
 #include "stdio.h"
-
-
-
-void quickSort(int *array, int n){
+void qSort(int *array, int n){
 	
-	
+	int pivote = array + n - 1 / 2;
 	int *prtL = array;
 	int *prtR = array + n-1;
 	while (prtL<=prtR)
 	{
-		
-		printf("value of PrtL[%d]", *(int*)prtL);
-		printf("address of PrtL[%p]\n",(void*)prtL);
-		prtL++;
+		if (*prtL < pivote)
+			prtL++;
+		else if
+			(*prtR > pivote)
+			prtR++;
+		else { 
+			int t = *prtL;
+			*prtL = *prtR;
+			*prtL = t;
+			prtL++;
+			prtR++;
+		}
 	}
-	
-	
 }
 
 int main(){
 
 	int array [] = {35,33,42,10,14,19,27,44,26,31};
-	quickSort(array, sizeof(array)/sizeof(int));
-	
+	qSort(array, sizeof(array)/sizeof(int));
 	return 0;
 }
-
 
 /*
 --------------------------------------
@@ -43,5 +44,4 @@ while (prtL<prtR)
 	prtL++;
 	}
 }
---------------------------------------
 */
