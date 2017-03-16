@@ -110,8 +110,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< .mine
     <ClCompile Include="..\..\..\qSort.c" />
     <ClCompile Include="..\..\..\qSortPrt.c" />
+=======
+    <ClCompile Include="..\..\..\qSortPrt.c" />
+
+>>>>>>> .theirs
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
