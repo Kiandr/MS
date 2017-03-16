@@ -42,3 +42,6 @@
 /sampleCodes/BST/x64/Debug/*.pdb
 /sampleCodes/c/TestProject/QuickSortPointer/QuickSortPointer/x64
 /sampleCodes/c/TestProject/QuickSortPointer/x64
+/sampleCodes/c/TestProject/QuickSortPointer/.vs/QuickSortPointer/v14/*.suo
+/sampleCodes/c/TestProject/QuickSortPointer/*.opendb
+/sampleCodes/c/TestProject/QuickSortPointer/*.db
