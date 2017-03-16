@@ -42,15 +42,15 @@ size_t LenthOfStaticArary(int a[]) {
 
 	return r;
 };
-
-int main() {
-
-	static int array[5] = { 35,33,42,10,14 };
-	// based on the compiler the size of int changes from 2 bytes to 4 bytes, however, an int array is member*sizeofInt=sizeofArray => members = sizeOfArray/sizeofInt simpel math!
-	int sizeOfArr = sizeof(array)/sizeof(int);
-	int  length = LenthOfStaticArary(array);
-	if (sizeOfArr != length)
-		return 0;
-	QuckSort(array, length);
-	return 0;
-}
+//
+//int main() {
+//
+//	static int array[5] = { 35,33,42,10,14 };
+//	// based on the compiler the size of int changes from 2 bytes to 4 bytes, however, an int array is member*sizeofInt=sizeofArray => members = sizeOfArray/sizeofInt simpel math!
+//	int sizeOfArr = sizeof(array)/sizeof(int);
+//	int  length = LenthOfStaticArary(array);
+//	if (sizeOfArr != length)
+//		return 0;
+//	QuckSort(array, length);
+//	return 0;
+//}

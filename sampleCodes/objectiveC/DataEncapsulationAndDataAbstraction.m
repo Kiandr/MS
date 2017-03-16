@@ -7,7 +7,7 @@
 Theory: All objective programs are consisted of two fundamental structures.
 
 1- Program statement (code), this is a part of the program that calls methods and performs actions.
-2- Program data: the data is the information of thepogram which affected by theprogram function. 
+2- Program data: the data is the information of the pogram which affected by theprogram function. 
 
 Encapsulation is an objected Oriented Programming concept that binds toghether the data and functiont hat manipulates the data and that keeps both safe from outside interfecence and mussue. The data encapsulation led to theimport ot OOP conepct of data binding. 
 - Data encapsulation is the mechanisim of bunding data and function to use them
