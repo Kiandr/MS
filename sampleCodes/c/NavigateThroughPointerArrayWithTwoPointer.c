@@ -1,21 +1,16 @@
 #include "stdio.h"
 
-
-
 void NavigateThroughPointerArrayWithTwoPointer(int *array, int n){
-	
-	
+
 	int *prtL = array;
 	int *prtR = array + n-1;
+
 	while (prtL<=prtR)
 	{
-		
 		printf("value of PrtL[%d]", *(int*)prtL);
 		printf("address of PrtL[%p]\n",(void*)prtL);
 		prtL++;
 	}
-	
-	
 }
 
 //int main(){
