@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\InsertSort.c" />
     <ClCompile Include="..\..\..\main.c" />
     <ClCompile Include="..\..\..\NavigateThroughPointerArrayWithTwoPointer.c" />
     <ClCompile Include="..\..\..\qSort.c" />

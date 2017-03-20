@@ -87,13 +87,13 @@ void OriginalQSort(int *a, int n) {
 	OriginalQSort(a, r - a + 1);
 	OriginalQSort(l, a + n - l);
 };
-int main () {
-    int a[] = {35,33,42,10,14,19,27,44,26,31 };
-    int n = sizeof a / sizeof a[0];
-	
-	OriginalQSort(a, n);
-    return 0;
-}
+//int main () {
+//    int a[] = {35,33,42,10,14,19,27,44,26,31 };
+//    int n = sizeof a / sizeof a[0];
+//	
+//	OriginalQSort(a, n);
+//    return 0;
+//}
 //  [1]: https://www.cse.ust.hk/~dekai/271/notes/L01a/quickSort.pdf
 //  [2]: http://www.cprogramming.com/tutorial/computersciencetheory/quicksort.html
  // [3]: http://rosettacode.org/wiki/Sorting_algorithms/Quicksort
