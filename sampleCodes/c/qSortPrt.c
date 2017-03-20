@@ -53,20 +53,50 @@ void qSortPrt(int *a, int n) {
 	qSortPrt(a, sizeOFThisA);
 	qSortPrt( a + myRight, sizeOFThisA);
 }
+void OriginalQSort(int *a, int n) {
+	for (int i = 0; i < 10; i++) { printf("[%d]", a[i]); }
+	if (n < 2)
+		return;
+	int p = a[n / 2];
+	int *l = a;
+	int *r = a + n - 1;
+	while (l <= r) {
+		printf("n=%d, L = %d, R = %d, P = %d, \n", n, *l, *r, p);
+		if (*l < p) {
+			l++;
+		}
+		else if (*r > p) {
+			r--;
+		}
+		else {
+			int t = *l;
+			*l = *r;
+			*r = t;
+			l++;
+			r--;
+		}
+	}
+	//for (int i = 0; i < 10; i++) { printf("[%d]", a[i]); }
 
+	int nleft = r - a + 1;
+	int nRight = a + n - l;
+	printf("\n");
+	printf("---- [(r - a + 1)] = %d  -------- nleft = [%d] --------\n", r - a + 1	  , nleft  );
+	printf("---- [(a + n - l)] = %d  -------- nleft = [%d] --------\n", a + n - l     , nRight );
+	
+	OriginalQSort(a, r - a + 1);
+	OriginalQSort(l, a + n - l);
+};
 int main () {
     int a[] = {35,33,42,10,14,19,27,44,26,31 };
     int n = sizeof a / sizeof a[0];
 	
-	qSortPrt(a, n);
+	OriginalQSort(a, n);
     return 0;
 }
-
-
 //  [1]: https://www.cse.ust.hk/~dekai/271/notes/L01a/quickSort.pdf
 //  [2]: http://www.cprogramming.com/tutorial/computersciencetheory/quicksort.html
  // [3]: http://rosettacode.org/wiki/Sorting_algorithms/Quicksort
-
 /*
 
 0x000000990d8ffba8 = 657357536168

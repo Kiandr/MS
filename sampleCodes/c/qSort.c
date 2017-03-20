@@ -20,14 +20,12 @@ void qSort(int *array, int n){
 		}
 	}
 }
-
 //int main(){
 //
 //	int array [] = {35,33,42,10,14,19,27,44,26,31};
 //	qSort(array, sizeof(array)/sizeof(int));
 //	return 0;
 //}
-
 /*
 --------------------------------------
 How to print value of pointer pointer?
