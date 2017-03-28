@@ -20,9 +20,9 @@ void InsertSort(int *array, int n) {
 		}
 }
 
-int main(){
-
-	int array [] = {35,33,42,10,14,19,27,44,26,31};
-	InsertSort(array, sizeof(array)/sizeof(int));
-	return 0;
-}
+//int main(){
+//
+//	int array [] = {35,33,42,10,14,19,27,44,26,31};
+//	InsertSort(array, sizeof(array)/sizeof(int));
+//	return 0;
+//}

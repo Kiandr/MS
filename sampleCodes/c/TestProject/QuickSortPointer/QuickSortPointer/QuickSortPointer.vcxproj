@@ -116,6 +116,9 @@
     <ClCompile Include="..\..\..\qSort.c" />
     <ClCompile Include="..\..\..\qSortPrt.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\Texpad\InsertionSort\sourceCode\InsertionSort\InsertionSort\BubbleSort.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
