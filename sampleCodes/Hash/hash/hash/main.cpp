@@ -1,26 +1,10 @@
-#include "lib.h"
-#include "libPP.h"
-#include "iostream"
+#include"stdio.h"
+#include "hash.h"
+#include "linkedListHashTable.h"
 
-int main() {
+int main()
+{
 
-	//serviceHash *serviceCallHash = new serviceHash("t");
-	ISService *service = (ISService*)malloc(sizeof(ISService));
-	service->print();
-
-	// Header
-	HashNode *header = (HashNode*)malloc(sizeof(HashNode));
-	char t[] = "KianDavoudi";
-	header->val = t;
-
-	IServiceHashPP *serviceP = new IServiceHashPP();
-
-	//  this rule applies all the time "index < t"
-	service->Insert(header,"O",11);
-	service->Del(header, 11);
-	std::cout<<service->Search(header,"a");
+	testInithashFunction(5);
 	return 0;
-
-
-
-};
+}
