@@ -18,12 +18,27 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="linkedListHashTable.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hashDirectedAddress.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="libPP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="linkedListHashTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hashDirectedAddress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

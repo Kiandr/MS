@@ -231,7 +231,6 @@ void testInithashFunction(int length)
 /* === === === Collision Controll=== === === */
 // The following are the three collision controll functions: 
 
-
 void ChainedHashedInsert(hashNode hashTableHeader, int aKeyValue) {
 
 	/*
@@ -241,9 +240,6 @@ void ChainedHashedInsert(hashNode hashTableHeader, int aKeyValue) {
 	The linkedlist will add the new node in the same hashTable slot.
 	*/
 }
-
-
-
 
 void ChainedHashedSearch(hashNode * hasTableHeader, int aKeyValue) {
 	/*

@@ -1,8 +1,8 @@
 #pragma once
 #pragma
 
-#ifndef	LINKEDLISTHASHTABLE_H_   /* Include guard */
-#define LINKEDLISTHASHTABLE_H_
+#ifndef	HASHDIRECTEDADDRESS_H_   /* Include guard */
+#define HASHDIRECTEDADDRESS_H_
 
 
 void testInithashFunction(int length);

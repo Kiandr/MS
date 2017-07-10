@@ -110,11 +110,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="hashDirectedAddress.cpp" />
+    <ClCompile Include="linkedListHashTable.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="hashDirectedAddress.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="libPP.h" />
+    <ClInclude Include="linkedListHashTable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
