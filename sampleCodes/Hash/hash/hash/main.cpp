@@ -1,10 +1,10 @@
 #include"stdio.h"
-#include "hash.h"
-#include "linkedListHashTable.h"
+
+#include "hashDirectedAddress.h"
 
 int main()
 {
 
-	testInithashFunction(5);
+	testDirectedAddresshashCollision();
 	return 0;
 }
