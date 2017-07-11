@@ -90,7 +90,7 @@ void testDirectedAddresshashCollision(void)
 	README:		functional test
 	1- Test to init hashArray and add three values from 0 to 2 indexes. PASSED
 	2- Test for collision contorl, if insert index 1, expected is printf and do not add. 
-		Result: Did not pass at 
+		Result: Did not pass at L52:->  https://github.com/Kiandr/MS/commit/5627b3f4528fd4cdcf7ba9c786b8399142765dc3
 	*/
 	// Test #1
 	int hashArray[20];
