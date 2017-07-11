@@ -49,7 +49,7 @@ void DirectedAddressHashTableInsert(int *prtToArrayTable, int aVal) {
 	*/
 	int hashIdex = HashFuntion(aVal);
 
-	if (*(prtToArrayTable + hashIdex)) {
+	if (*(prtToArrayTable + hashIdex)>=0) {
 		printf("The index [%d]is empty, you can add value %d! \n", hashIdex,aVal);
 		*(prtToArrayTable + hashIdex) = aVal;
 	}
@@ -91,13 +91,24 @@ void testDirectedAddresshashCollision(void)
 	1- Test to init hashArray and add three values from 0 to 2 indexes. PASSED
 	2- Test for collision contorl, if insert index 1, expected is printf and do not add. 
 		Result: Did not pass at L52:->  https://github.com/Kiandr/MS/commit/5627b3f4528fd4cdcf7ba9c786b8399142765dc3
+		EffortNew: 
+	
 	*/
 	// Test #1
 	int hashArray[20];
+	// Build Array with Values null for non-existance value; 
+	for (int i = 0; i < 20; i++) {
+	
+		*(hashArray + i) = NULL;
+	}
 	DirectedAddressHashTableInsert(hashArray, 1);
 	DirectedAddressHashTableInsert(hashArray, 2);
 	DirectedAddressHashTableInsert(hashArray, 4);
 
+	DirectedAddressHashTablePrint(hashArray);
+	
 	// Test #2
+	printf("Test #2 begins\n");
 	DirectedAddressHashTableInsert(hashArray, 2);
+	DirectedAddressHashTablePrint(hashArray);
 }
