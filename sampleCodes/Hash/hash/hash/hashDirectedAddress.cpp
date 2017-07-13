@@ -64,7 +64,7 @@ void DirectedAddressHashTableInsert(int *prtToArrayTable, int aVal) {
 		*/
 
 
-		if ((*(prtToArrayTable + hashIdex)) == NULL)
+		if ((*(prtToArrayTable + hashIdex)).type == "LinkedListHeader")
 		{
 			printf("The value collision detected NO linkedList, go ahead with buildin header ");
 		}
