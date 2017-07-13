@@ -49,13 +49,29 @@ void DirectedAddressHashTableInsert(int *prtToArrayTable, int aVal) {
 	*/
 	int hashIdex = HashFuntion(aVal);
 
-	if (*(prtToArrayTable + hashIdex)>=0) {
+	if (*(prtToArrayTable + hashIdex)==NULL) {
 		printf("The index [%d]is empty, you can add value %d! \n", hashIdex,aVal);
 		*(prtToArrayTable + hashIdex) = aVal;
 	}
 	else {
 	
-		printf("Collision occured. Please use collision control method to index %d, with existing val = %d.\n", hashIdex,*prtToArrayTable+hashIdex);
+		/*
+		Author: Kian D.Rad
+		Date: July 13th 2017
+		README: is there an exising value? 
+				if not build a header 
+				if yes, go to the end of linked list add new value. 
+		*/
+
+
+		if ((*(prtToArrayTable + hashIdex)) == NULL)
+		{
+			printf("The value collision detected NO linkedList, go ahead with buildin header ");
+		}
+
+
+		printf("Collision occured. Please use collision control method to index %d, with existing val = %d.\n", 
+			hashIdex,*prtToArrayTable+hashIdex);
 	}
 
 }
@@ -91,7 +107,9 @@ void testDirectedAddresshashCollision(void)
 	1- Test to init hashArray and add three values from 0 to 2 indexes. PASSED
 	2- Test for collision contorl, if insert index 1, expected is printf and do not add. 
 		Result: Did not pass at L52:->  https://github.com/Kiandr/MS/commit/5627b3f4528fd4cdcf7ba9c786b8399142765dc3
-		EffortNew: 
+		EffortNew: It passed:			https://github.com/Kiandr/MS/commit/64a5b8958f81edcd1b6521d6e0f465f83aba8364
+	
+	3- Test if the collision control is able to detect existance or lack of linkedlist
 	
 	*/
 	// Test #1
@@ -110,5 +128,10 @@ void testDirectedAddresshashCollision(void)
 	// Test #2
 	printf("Test #2 begins\n");
 	DirectedAddressHashTableInsert(hashArray, 2);
+	DirectedAddressHashTablePrint(hashArray);
+
+	// Test #3
+	printf("Test #3 begins\n");
+	DirectedAddressHashTableInsert(hashArray, 4);
 	DirectedAddressHashTablePrint(hashArray);
 }
