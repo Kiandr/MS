@@ -58,16 +58,15 @@ void DirectedAddressHashTableInsert(int *prtToArrayTable, int aVal) {
 		/*
 		Author: Kian D.Rad
 		Date: July 13th 2017
-		README: is there an exising value? 
-				if not build a header 
-				if yes, go to the end of linked list add new value. 
+		README: is there an exising value?
+		https://github.com/Kiandr/MS/commit/d996a9f0750dee9f71db160a2f1a900bb4adbb9f
 		*/
 
 
-		if ((*(prtToArrayTable + hashIdex)).type == "LinkedListHeader")
+	/*	if ((*(prtToArrayTable + hashIdex)).type == "LinkedListHeader")
 		{
 			printf("The value collision detected NO linkedList, go ahead with buildin header ");
-		}
+		}*/
 
 
 		printf("Collision occured. Please use collision control method to index %d, with existing val = %d.\n", 

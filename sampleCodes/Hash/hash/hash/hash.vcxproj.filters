@@ -24,6 +24,9 @@
     <ClCompile Include="hashDirectedAddress.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="hashtabledirectedaddresslinkedlistcollisioncontroll.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="hashDirectedAddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hashtabledirectedaddresslinkedlistcollisioncontroll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

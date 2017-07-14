@@ -1,6 +1,6 @@
 #include"stdio.h"
 
-#include "hashDirectedAddress.h"
+#include "hashtabledirectedaddresslinkedlistcollisioncontroll.h"
 
 int main()
 {
