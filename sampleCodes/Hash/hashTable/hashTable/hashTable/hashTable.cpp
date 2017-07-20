@@ -83,14 +83,49 @@ node* LinkedListHashInsert(node *nodeToBeInserted, int aVal) {
 };
 
 
-void DirectedAccessHashTableInsert(node * prtToHashTableArray, int aVal) {
-
+node* DirectedAccessHashTableInsert(node * prtToHashTableArray, int aVal) {
+	/*
+	Author: Kian D.Rad
+	Data:	July 20th 2017
+	README:	This is an insert on LinkedList function
+	ToDo:
+	Required: The array should be initialized before, with node objects. So when 
+				the user adds into the header, its gonna be avaliable. 
+	1- getIndex in the array from hash function
+	2- insertIntoThatIndex.
+	*/
 	node * prtH = prtToHashTableArray;
 
 	// test and debugging 
-	node * indexedNode = prtH + hash(aVal);
+	int  indexedNode = hash(aVal);
 
-	indexedNode = LinkedListHashInsert(indexedNode, aVal);
+	// this is a case that we assure that header is null. Because next is NULL, and prev is also NULL
+	if (((prtToHashTableArray + indexedNode)->next == NULL) && ((prtToHashTableArray + indexedNode)->prev == NULL)) {
+		prtToHashTableArray->val = aVal;
+
+		// double check next is empy, because that should be. 
+		prtToHashTableArray->next = NULL;
+		prtToHashTableArray->prev = NULL;
+	}
+	// this is the case that we assure header is not null. This means, that the next node exists thus. 
+	// header-> prev is always null, but header->next should not be. That should be a valid pointer, a valid interger and 
+	// a valid address of memory. The next nude should have a prev as this node, next either empty or next. The content may vary, 
+	// may contain 0. 
+	else if (((prtToHashTableArray + indexedNode)->next != NULL) && ((prtToHashTableArray + indexedNode)->prev == NULL)) {
+	// Now we have to seek the last node of the linked list. 
+		node *prt = prtToHashTableArray;
+		while (prt->next) {
+			prt = prt->next;
+		}
+		prt->next =(node*) malloc(sizeof(node));
+		prt->next->next = NULL;
+		prt->next->prev = prt;
+		prt->next->val = aVal;
+		
+	}
+
+
+	return prtToHashTableArray;
 
 };
 
@@ -105,7 +140,7 @@ void HelloWorld()
 	README:	This method init the array of struct node with null vals 
 	ToDo: 
 		1- Init array type node and assing null to the each memeber. PASSED
-		2- Test 2: add the val to table, transvers in node linkedlist
+		2- Test 2: add the val to table, transvers in node linkedlist 
 	*/
 
 	// define an array of type node
@@ -121,14 +156,22 @@ void HelloWorld()
 		// Navigator via Directed Access
 		//*prtToH = DirectedArrayListNodeType[i];
 		// Navigator via pointer
-		prtToH = prtToH+i;
+		//prtToH = prtToH+i;
 		node *t = NULL;
 
-		prtToH->next = NULL;
-		prtToH->prev = NULL;
-		prtToH->val = 0;
 
-		printf("index [%d] contains value [%d]\n",i,(prtToH)->val);
+		// OR use Array
+		/*
+		DirectedArrayListNodeType[i].next = NULL;
+		DirectedArrayListNodeType[i].prev = NULL;
+		DirectedArrayListNodeType[i].val = 100;
+		*/
+
+		(prtToH+i)->next = NULL;
+		(prtToH+i)->prev = NULL;
+		(prtToH+i)->val = 100;
+
+		printf("index [%d] contains value [%d]\n",i, DirectedArrayListNodeType[i].val);
 		
 	}
 
@@ -141,9 +184,10 @@ void HelloWorld()
 	printf(" START OF Test 2 \n");
 
 	DirectedAccessHashTableInsert(prtToH,1);
+
 	for (int i = 0; i < 10; i++) {
 
-		printf("index [%d] contains value [%d]\n", i, (prtToH)->val);
+		printf("index [%d] contains value [%d]\n", i, DirectedArrayListNodeType[i].val);
 
 	}
 
