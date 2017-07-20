@@ -98,7 +98,7 @@ node* DirectedAccessHashTableInsert(node * prtToHashTableArray, int aVal) {
 
 	// test and debugging 
 	int  indexedNode = hash(aVal);
-
+	indexedNode = indexedNode * sizeof(node);
 	// this is a case that we assure that header is null. Because next is NULL, and prev is also NULL
 	if (((prtToHashTableArray + indexedNode)->next == NULL) && ((prtToHashTableArray + indexedNode)->prev == NULL)) {
 		prtToHashTableArray->val = aVal;
@@ -140,7 +140,7 @@ void HelloWorld()
 	README:	This method init the array of struct node with null vals 
 	ToDo: 
 		1- Init array type node and assing null to the each memeber. PASSED
-		2- Test 2: add the val to table, transvers in node linkedlist 
+		2- Test 2: add the val to table, transvers in node linkedlist. PASSED July 21st 2017
 	*/
 
 	// define an array of type node
@@ -184,6 +184,7 @@ void HelloWorld()
 	printf(" START OF Test 2 \n");
 
 	DirectedAccessHashTableInsert(prtToH,1);
+	
 
 	for (int i = 0; i < 10; i++) {
 
@@ -192,7 +193,40 @@ void HelloWorld()
 	}
 
 
-	printf(" END OF Test 1 \n");
+	printf(" END OF Test 2 \n");
+
+
+
+
+	// Test3
+	// The issue is that it seems that the transverse in the first arry is not working. 
+	/*
+	node array[10];
+	prt = arry;
+	prt+x =<<<< is broken. 
+	*/
+
+	printf(" START OF Test 3 \n");
+
+	DirectedAccessHashTableInsert(prtToH, 2);
+
+
+	for (int i = 0; i < 10; i++) {
+
+		printf("index [%d] contains value [%d]\n", i, DirectedArrayListNodeType[i].val);
+
+	}
+
+
+	printf(" END OF Test 3 \n");
+
+
+
+
+
+
+
+
 
 }
 
