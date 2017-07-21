@@ -92,20 +92,20 @@ node* DirectedAccessHashTableInsert(node * prtToHashTableArray, int aVal) {
 
 	// test and debugging 
 	int  indexedNode = hash(aVal);
-	indexedNode = indexedNode * sizeof(node);
+	/*indexedNode = indexedNode * sizeof(node);*/
 	// this is a case that we assure that header is null. Because next is NULL, and prev is also NULL
-	if (((prtToHashTableArray + indexedNode)->next == NULL) && ((prtToHashTableArray + indexedNode)->prev == NULL)) {
-		prtToHashTableArray->val = aVal;
+	if (((prtToHashTableArray [indexedNode].next )== NULL) && ((prtToHashTableArray [indexedNode].prev )== NULL)) {
+		(prtToHashTableArray+ indexedNode)->val = aVal;
 
 		// double check next is empy, because that should be. 
-		prtToHashTableArray->next = NULL;
-		prtToHashTableArray->prev = NULL;
+		(prtToHashTableArray+ indexedNode)->next = NULL;
+		(prtToHashTableArray+indexedNode)->prev = NULL;
 	}
 	// this is the case that we assure header is not null. This means, that the next node exists thus. 
 	// header-> prev is always null, but header->next should not be. That should be a valid pointer, a valid interger and 
 	// a valid address of memory. The next nude should have a prev as this node, next either empty or next. The content may vary, 
 	// may contain 0. 
-	else if (((prtToHashTableArray + indexedNode)->next != NULL) && ((prtToHashTableArray + indexedNode)->prev == NULL)) {
+	else if (((prtToHashTableArray [ indexedNode].next) != NULL) && ((prtToHashTableArray [indexedNode].prev )== NULL)) {
 	// Now we have to seek the last node of the linked list. 
 		node *prt = prtToHashTableArray;
 		while (prt->next) {
