@@ -1,10 +1,7 @@
 #include "hashTable.h"
 #include "stdio.h"
-#include"stdlib.h"
+#include "stdlib.h"
 
-
-
-// 
 int hash(int aVal) {
 
 	/*
@@ -18,9 +15,6 @@ int hash(int aVal) {
 	return (aVal / 2);
 
 }
-
-
-
 
 node *AppendNewNode(node* incomingNode, int aVal) {
 	/*
@@ -128,8 +122,6 @@ node* DirectedAccessHashTableInsert(node * prtToHashTableArray, int aVal) {
 	return prtToHashTableArray;
 
 };
-
-
 
 
 void HelloWorld()
