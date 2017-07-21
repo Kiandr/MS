@@ -94,7 +94,7 @@ node* DirectedAccessHashTableInsert(node * prtToHashTableArray, int aVal) {
 	int  indexedNode = hash(aVal);
 	/*indexedNode = indexedNode * sizeof(node);*/
 	// this is a case that we assure that header is null. Because next is NULL, and prev is also NULL
-	if (((prtToHashTableArray [indexedNode].next )== NULL) && ((prtToHashTableArray [indexedNode].prev )== NULL)) {
+	if (((prtToHashTableArray + indexedNode)->next == NULL) && (((prtToHashTableArray +indexedNode)->prev )== NULL)) {
 		(prtToHashTableArray+ indexedNode)->val = aVal;
 
 		// double check next is empy, because that should be. 
