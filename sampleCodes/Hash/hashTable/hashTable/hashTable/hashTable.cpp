@@ -161,7 +161,7 @@ void HelloWorld()
 
 		(prtToH+i)->next = NULL;
 		(prtToH+i)->prev = NULL;
-		(prtToH+i)->val = 100;
+		(prtToH+i)->val = 100+i;
 
 		printf("index [%d] contains value [%d]\n",i, DirectedArrayListNodeType[i].val);
 		
