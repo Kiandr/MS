@@ -4,6 +4,10 @@
 *.o
 *.obj
 
+# remove Xcode 
+
+*.DS_Store
+
 # Precompiled Headers
 *.gch
 *.pch
