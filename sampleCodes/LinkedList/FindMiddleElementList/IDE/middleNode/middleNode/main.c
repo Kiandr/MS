@@ -27,12 +27,18 @@ int main(int argc, const char * argv[]) {
 
 
     // FALIED
-    int FAILED =   AddNewNodeWithMode (emptyHeader, NULL);
+    int FAILED =   ifHeaderIsEmpty (emptyHeader);
 
     //PASSED
     emptyHeader->next = (node*)malloc (sizeof(node));
-    int PASSED =   AddNewNodeWithMode (emptyHeader, NULL);
+    int PASSED =   ifHeaderIsEmpty (emptyHeader);
 
+
+    // ADD NEW NODE
+    int resault=  AddNewNodeWithMode (header, 50);
+
+
+     printList(header);
 
     return 0;
 }

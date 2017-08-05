@@ -22,6 +22,7 @@ typedef struct {
 
 node *initHeaderWithEmptyModel (void);
 int  AddNewNodeWithMode (node *header, int val);
-void printList(void);
+int  ifHeaderIsEmpty (node * model);
+void printList(node *header);
 
 #endif /* list_h */

@@ -13,7 +13,7 @@
 node *initHeaderWithEmptyModel (void){
 
 	node *model = (node*) malloc(sizeof(node));
-    model->val  = 1;
+    model->val  = 0;
     model->next = NULL;
 
     return model;
@@ -21,7 +21,7 @@ node *initHeaderWithEmptyModel (void){
 }
 
 
-int  AddNewNodeWithMode (node *header, int val){
+int  ifHeaderIsEmpty (node * model){
 	/*
 	Author: Kian D.Rad
 	Date: August 4th 2017
@@ -32,7 +32,7 @@ int  AddNewNodeWithMode (node *header, int val){
 	*/
 	
 	
-    if (header->next)
+    if (model->next)
 		return 1;
 	else return 0;
 		
@@ -40,9 +40,29 @@ int  AddNewNodeWithMode (node *header, int val){
 	
 }
 
-void printList(void){
-    // TODO:
-    // Print linkedList
+int  AddNewNodeWithMode (node *header, int val){
+
+    node *prt = header;
+    if (prt->next){
+        prt=prt->next;
+    }
+    prt->next = (node *)malloc(sizeof(node));
+	prt=prt->next;
+	prt->next = NULL;
+	prt->val = val;
+
+    return 1;
+
+}
+
+void printList(node *header){
+
+
+    node *prt = header;
+    if (prt->next){
+        printf("node =[%p] | node->val [%d] |  node-next = [%d]", prt , prt->val, prt->next);
+        prt=prt->next;
+    }
     printf("Test was completed");
 
 };
