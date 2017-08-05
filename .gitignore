@@ -7,9 +7,9 @@
 # remove Xcode 
 *.xcuserdatad
 *.DS_Store
-*.xcuserstate
+
 *.xcuserdatad
-LinkedList/FindMiddleElementList/IDE/middleNode/middleNode.xcodeproj/project.xcworkspace/xcuserdata/kdr.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
 
 # Precompiled Headers
 *.gch
