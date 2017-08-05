@@ -5,7 +5,7 @@
 *.obj
 
 # remove Xcode 
-
+*.xcuserdatad
 *.DS_Store
 
 # Precompiled Headers
