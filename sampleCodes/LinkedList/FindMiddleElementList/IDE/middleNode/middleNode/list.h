@@ -21,7 +21,7 @@ typedef struct {
 
 
 node *initHeaderWithEmptyModel (void);
-
+int  AddNewNodeWithMode (node *header, int val);
 void printList(void);
 
 #endif /* list_h */

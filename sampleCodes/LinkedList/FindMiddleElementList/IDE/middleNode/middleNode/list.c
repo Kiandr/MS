@@ -20,6 +20,26 @@ node *initHeaderWithEmptyModel (void){
     
 }
 
+
+int  AddNewNodeWithMode (node *header, int val){
+	/*
+	Author: Kian D.Rad
+	Date: August 4th 2017
+	README: add new node at the tail. With new Val or with new Model
+	TODO: 
+	1- Transvers to the end of the linkedlist if header is not empty
+	2- add new node at the end. 
+	*/
+	
+	
+    if (header->next)
+		return 1;
+	else return 0;
+		
+	
+	
+}
+
 void printList(void){
     // TODO:
     // Print linkedList
