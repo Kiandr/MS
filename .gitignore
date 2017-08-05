@@ -8,6 +8,7 @@
 *.xcuserdatad
 *.DS_Store
 *.xcuserstate
+*.xcuserdatad
 
 # Precompiled Headers
 *.gch
