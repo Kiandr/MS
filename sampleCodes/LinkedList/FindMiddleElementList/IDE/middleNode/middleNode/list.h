@@ -20,7 +20,7 @@ typedef struct {
 }node;
 
 
-
+node *initHeaderWithEmptyModel (void);
 
 void printList(void);
 

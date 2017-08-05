@@ -10,8 +10,13 @@
 #include "list.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printList();
-    printf("Hello, World!\n");
+
+
+
+     node *header = NULL;
+     header = initHeaderWithEmptyModel();
+
+
+
     return 0;
 }
