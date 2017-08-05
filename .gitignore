@@ -7,6 +7,7 @@
 # remove Xcode 
 *.xcuserdatad
 *.DS_Store
+*.xcuserstate
 
 # Precompiled Headers
 *.gch
