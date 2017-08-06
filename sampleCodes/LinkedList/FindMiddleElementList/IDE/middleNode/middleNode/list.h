@@ -24,5 +24,6 @@ node *initHeaderWithEmptyModel (void);
 int  AddNewNodeWithMode (node *header, int val);
 int  ifHeaderIsEmpty (node * model);
 void printList(node *header);
+node *findMiddleNodeInLinkedList (node *header);
 
 #endif /* list_h */

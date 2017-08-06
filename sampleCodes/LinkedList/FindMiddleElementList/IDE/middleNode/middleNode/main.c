@@ -36,6 +36,7 @@ int main(int argc, const char * argv[]) {
 
     // ADD NEW NODE
     int resault=  AddNewNodeWithMode (header, 50);
+     resault=  AddNewNodeWithMode (header, 51);
 
 
      printList(header);

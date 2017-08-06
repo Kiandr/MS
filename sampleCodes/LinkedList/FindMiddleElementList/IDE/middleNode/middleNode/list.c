@@ -43,11 +43,11 @@ int  ifHeaderIsEmpty (node * model){
 int  AddNewNodeWithMode (node *header, int val){
 
     node *prt = header;
-    if (prt->next){
-        prt=prt->next;
+    while (prt->next){
+        prt= (node*)prt->next;
     }
-    prt->next = (node *)malloc(sizeof(node));
-	prt=prt->next;
+    prt->next = (node *)(malloc(sizeof(node) ));
+	prt=(node*)prt->next;
 	prt->next = NULL;
 	prt->val = val;
 
@@ -59,10 +59,43 @@ void printList(node *header){
 
 
     node *prt = header;
-    if (prt->next){
-        printf("node =[%p] | node->val [%d] |  node-next = [%d]", prt , prt->val, prt->next);
-        prt=prt->next;
+	while  (prt){
+        printf("node =[%p] | node->val [%d] |  node-next = [%p]\n", prt , prt->val, prt->next);
+        prt= (node*)prt->next;
     }
-    printf("Test was completed");
+    printf("Test was completed\n");
 
+};
+
+
+node *findMiddleNodeInLinkedList (node *header){
+	
+	/*
+	
+	Author: Kian D.Rad
+	Date:  August 6th 2017
+	README: https://coderbyte.com/algorithm/linked-list-middle-element
+	TODO: Use fast and slow runner, walk fast runner to the end of the list
+		
+	*/
+	
+	node *prtF = header;
+	node* prtS = header;
+	while (prtF->next){
+		// Do it towise
+//		prtF = prt->next;
+//		prtF = prt->next;
+		
+		// or do this. 
+		prtF= (node*)((node*)(prtF->next))->next;
+		prtS= (node*)prtS->next;
+		
+	}
+	
+	return prtS;
+	
+	
+	
+	
+	
 };
