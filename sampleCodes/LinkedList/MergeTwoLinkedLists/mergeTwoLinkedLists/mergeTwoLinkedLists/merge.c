@@ -94,9 +94,47 @@ node *findMiddleNodeInLinkedList (node *header){
     }
     
     return prtS;
-    
-    
-    
-    
-    
+};
+
+node *Merge(node *headerA, node* headerB){
+
+    node *mergedList = (node*) malloc(sizeof(node));
+
+    node* prtM = mergedList;
+    node* prtA = headerA;
+    node* prtB = headerB;
+
+
+    while (prtA && prtB){
+
+        if (prtA->val >prtB->val)
+        {
+            prtM->next = (node*) malloc(sizeof(node));
+            ((node*)(prtM->next))->val = (int)prtA->val;
+            prtM = prtM->next;
+
+            prtM->next = (node*) malloc(sizeof(node));
+            ((node*)(prtM->next))->val = (int)prtB->val;
+
+
+        }
+        else {
+
+
+            prtM->next = (node*) malloc(sizeof(node));
+            ((node*)(prtM->next))->val = (int)prtB->val;
+            prtM = prtM->next;
+
+            prtM->next = (node*) malloc(sizeof(node));
+            ((node*)(prtM->next))->val = (int)prtA->val;
+
+
+        }
+
+        prtA=prtA->val;
+        prtB= prtB->next;
+
+    }
+
+    return mergedList;
 };

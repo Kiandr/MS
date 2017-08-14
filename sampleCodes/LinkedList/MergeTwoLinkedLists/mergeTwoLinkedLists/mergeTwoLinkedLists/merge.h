@@ -23,6 +23,7 @@ int  AddNewNodeWithMode (node *header, int val);
 int  ifHeaderIsEmpty (node * model);
 void printList(node *header);
 node *findMiddleNodeInLinkedList (node *header);
+node *Merge(node *headerA, node* headerB);
 
 
 #endif /* merge_h */

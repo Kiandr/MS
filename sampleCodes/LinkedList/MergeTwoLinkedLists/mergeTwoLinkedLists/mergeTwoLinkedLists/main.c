@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
     AddNewNodeWithMode (HeaderB, 53);
     AddNewNodeWithMode (HeaderA, 54);
     AddNewNodeWithMode (HeaderB, 55);
-    
+
 
     // Print A and B
     printList(HeaderA);
