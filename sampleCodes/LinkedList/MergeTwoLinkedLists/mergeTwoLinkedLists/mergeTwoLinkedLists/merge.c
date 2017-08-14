@@ -131,7 +131,7 @@ node *Merge(node *headerA, node* headerB){
 
         }
 
-        prtA=prtA->val;
+        prtA=prtA->next;
         prtB= prtB->next;
 
     }

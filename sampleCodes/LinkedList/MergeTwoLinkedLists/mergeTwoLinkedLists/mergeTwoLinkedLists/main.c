@@ -28,8 +28,13 @@ int main(int argc, const char * argv[]) {
     // Print A and B
     printList(HeaderA);
     printList(HeaderB);
-    
 
+
+
+    printf("Test Merge!\n");
+    // testNew merge to linkedlists
+    node *meregedNode = Merge(HeaderA, HeaderB);
+    printList(meregedNode);
 
     printf("Hello, World!\n");
     return 0;
