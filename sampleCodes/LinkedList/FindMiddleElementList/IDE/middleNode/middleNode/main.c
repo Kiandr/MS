@@ -39,6 +39,10 @@ int main(int argc, const char * argv[]) {
      resault=  AddNewNodeWithMode (header, 51);
 
 
+    // FindTheMiddleTest PASSED
+    node * findTheMiddleTest =  (node*)findMiddleNodeInLinkedList (header);
+    
+
      printList(header);
 
     return 0;
