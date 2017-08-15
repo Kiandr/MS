@@ -211,25 +211,14 @@ node *MergeABinotCIfLogic(node *headerA, node* headerB){
 
 
 
-        //prtM->val = prtA->val;
-
-        // now add to next node the prtB->val
-        //prtM->next = (node*) malloc(sizeof(node));
-        //
-        // prtM = prtM->next;
-
-
-        //   prtM->val = prtB->val;
-        //
-
-
+        // nuild the next node in prtM linked list avoid prt error
         prtM->next = (node*) malloc(sizeof(node));
         prtM = (node*)prtM->next;
         prtM->next = NULL;
         prtM->val = 0;
 
 
-
+        // transvers within A and B linked list
         prtA = (node*)prtA->next;
         prtB = (node*)prtB->next;
         
