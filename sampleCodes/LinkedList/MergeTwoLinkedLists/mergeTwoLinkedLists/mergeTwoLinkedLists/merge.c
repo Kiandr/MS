@@ -13,7 +13,7 @@
 
 node *initHeaderWithEmptyModel (void){
 
-    node *model = (node*) malloc(sizeof(node));
+    node *model = (node*)malloc(sizeof(node));
     model->val  = 0;
     model->next = NULL;
 
@@ -125,14 +125,14 @@ node *Merge(node *headerA, node* headerB){
             ((node*)(prtM->next))->val = (int)prtB->val;
             prtM = prtM->next;
 
-            prtM->next = (node*) malloc(sizeof(node));
+            prtM->next = (node*) (malloc(sizeof(node)));
             ((node*)(prtM->next))->val = (int)prtA->val;
 
 
         }
 
-        prtA=prtA->next;
-        prtB= prtB->next;
+        prtA = (node*)prtA->next;
+        prtB = (node*)prtB->next;
 
     }
 
@@ -163,14 +163,14 @@ node *MergeABinotC(node *headerA, node* headerB){
 
 
             prtM->next = (node*) malloc(sizeof(node));
-            prtM = prtM->next;
+            prtM = (node*)prtM->next;
             prtM->next = NULL;
             prtM->val = 0;
 
 
         
-            prtA = prtA->next;
-            prtB = prtB->next;
+            prtA = (node*)prtA->next;
+            prtB = (node*)prtB->next;
         
         
     }
