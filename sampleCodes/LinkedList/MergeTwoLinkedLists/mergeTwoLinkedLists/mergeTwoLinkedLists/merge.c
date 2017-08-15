@@ -138,3 +138,43 @@ node *Merge(node *headerA, node* headerB){
 
     return mergedList;
 };
+
+
+
+node *MergeABinotC(node *headerA, node* headerB){
+
+    node *mergedList = (node*) malloc(sizeof(node));
+
+    node* prtM = mergedList;
+    node* prtA = headerA;
+    node* prtB = headerB;
+
+
+    while (prtA && prtB){
+
+            prtM->val = prtA->val;
+
+            // now add to next node the prtB->val
+            prtM->next = (node*) malloc(sizeof(node));
+            //
+            prtM = prtM->next;
+            prtM->val = prtB->val;
+            //
+
+
+            prtM->next = (node*) malloc(sizeof(node));
+            prtM = prtM->next;
+            prtM->next = NULL;
+            prtM->val = 0;
+
+
+        
+            prtA = prtA->next;
+            prtB = prtB->next;
+        
+        
+    }
+    
+    return mergedList;
+};
+

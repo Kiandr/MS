@@ -24,6 +24,7 @@ int  ifHeaderIsEmpty (node * model);
 void printList(node *header);
 node *findMiddleNodeInLinkedList (node *header);
 node *Merge(node *headerA, node* headerB);
+node *MergeABinotC(node *headerA, node* headerB);
 
 
 #endif /* merge_h */

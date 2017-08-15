@@ -31,11 +31,16 @@ int main(int argc, const char * argv[]) {
 
 
 
-    printf("Test Merge!\n");
-    // testNew merge to linkedlists
-    node *meregedNode = Merge(HeaderA, HeaderB);
-    printList(meregedNode);
+    //printf("Test Merge!\n");
+   // node *meregedNode = Merge(HeaderA, HeaderB);
 
-    printf("Hello, World!\n");
+
+    printf("Test Merge AB into C!\n");
+
+    printList( MergeABinotC((node*)HeaderA, (node*)HeaderB));
+
+
+
+    printf("Hello, END OF FUNCTION!\n");
     return 0;
 }
