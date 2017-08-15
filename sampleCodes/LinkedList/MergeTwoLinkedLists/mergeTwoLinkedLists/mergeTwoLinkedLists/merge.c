@@ -178,3 +178,64 @@ node *MergeABinotC(node *headerA, node* headerB){
     return mergedList;
 };
 
+
+
+node *MergeABinotCIfLogic(node *headerA, node* headerB){
+
+    node *mergedList = (node*) malloc(sizeof(node));
+
+    node* prtM = mergedList;
+    node* prtA = headerA;
+    node* prtB = headerB;
+
+
+    while (prtA && prtB){
+
+
+        if (prtA->val <prtB->val){
+
+            prtM->val = prtA->val;
+            prtM->next = (node*) malloc(sizeof(node));
+            prtM = prtM->next;
+            prtM->val = prtB->val;
+
+        }
+
+        else{
+            prtM->val = prtB->val;
+            prtM->next = (node*) malloc(sizeof(node));
+            prtM = prtM->next;
+            prtM->val = prtA->val;
+
+        }
+
+
+
+        //prtM->val = prtA->val;
+
+        // now add to next node the prtB->val
+        //prtM->next = (node*) malloc(sizeof(node));
+        //
+        // prtM = prtM->next;
+
+
+        //   prtM->val = prtB->val;
+        //
+
+
+        prtM->next = (node*) malloc(sizeof(node));
+        prtM = (node*)prtM->next;
+        prtM->next = NULL;
+        prtM->val = 0;
+
+
+
+        prtA = (node*)prtA->next;
+        prtB = (node*)prtB->next;
+        
+        
+    }
+    
+    return mergedList;
+};
+

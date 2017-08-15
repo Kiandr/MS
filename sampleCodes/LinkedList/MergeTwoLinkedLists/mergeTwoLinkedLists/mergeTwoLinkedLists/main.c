@@ -36,8 +36,10 @@ int main(int argc, const char * argv[]) {
 
 
     printf("Test Merge AB into C!\n");
-
     printList( MergeABinotC((node*)HeaderA, (node*)HeaderB));
+
+    printf("Test Merge AB into C with if Logic!\n");
+    printList( MergeABinotCIfLogic((node*)HeaderA, (node*)HeaderB));
 
 
 
