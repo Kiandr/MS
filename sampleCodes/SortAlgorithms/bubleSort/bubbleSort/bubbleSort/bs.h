@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 
+void bubbleSort (int* headerToArray, int lenthOFArray);
+
 
 
 #endif /* bs_h */

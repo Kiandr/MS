@@ -11,6 +11,10 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+
+    int array [] = {14,33,27,35,10};
+    bubbleSort (array, (sizeof(array)/sizeof(int)));
+
     printf("Hello, World!\n");
     return 0;
 }
