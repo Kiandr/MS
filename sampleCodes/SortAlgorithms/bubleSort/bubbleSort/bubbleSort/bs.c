@@ -10,16 +10,17 @@
 
 
 void bubbleSort (int* headerToArray, int lenthOFArray){
+    for (int i=0; i<lenthOFArray; i++){
+
     int *prt  = headerToArray;
-    int *prtN = headerToArray++;
-    int *prtE = headerToArray + lenthOFArraygit  ;
+    int *prtN = headerToArray+1;
+    int *prtE = headerToArray + lenthOFArray-1  ;
 
     /* should make sure that prt and prtE both have been takes from the same malloc*/
 
-    for (int i=0; i<lenthOFArray; i++){
-    while (prt>prtE)
+       while (prt<prtE)
     {
-        if (*prt<*prtN)
+        if (*prt>*prtN)
         {
             int t = *prt;
             *prt = *prtN;
