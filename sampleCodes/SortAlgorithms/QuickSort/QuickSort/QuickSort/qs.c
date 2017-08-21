@@ -11,6 +11,12 @@
 
 int *Qs(const int *arrayHeader, int Length ){
 
+    /*
+     Author: Kian D.Rad 
+     Date: August 21st 2017
+     README: QuickSort is a recursive solution.
+     */
+
     int *prtH = arrayHeader;
     int l = Length;
     int *prtP = arrayHeader;
