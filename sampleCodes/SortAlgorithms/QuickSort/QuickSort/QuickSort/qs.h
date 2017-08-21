@@ -9,6 +9,7 @@
 #ifndef qs_h
 #define qs_h
 
-#include <stdio.h>
+
+int *Qs(const int *arrayHeader, int Length );
 
 #endif /* qs_h */
