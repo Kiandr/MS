@@ -12,8 +12,11 @@
  Author: Kian D.Rad
  Date:  August 27th 2017
  README: Recursive excersice, you should definitely master them all. 
- 
+
  http://www.w3resource.com/c-programming-exercises/recursion/index.php
+
+ This is also an other very very very good tutorial
+ http://www.danzig.us/cpp/recursion.html
  
  */
 
