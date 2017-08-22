@@ -8,6 +8,15 @@
 
 #include "rh.h"
 
+/*
+ Author: Kian D.Rad
+ Date:  August 27th 2017
+ README: Recursive excersice, you should definitely master them all. 
+ 
+ http://www.w3resource.com/c-programming-exercises/recursion/index.php
+ 
+ */
+
 void printUpToFifty 	(int a){
 
     // known condition A
