@@ -18,6 +18,6 @@ int main(int argc, const char * argv[]) {
     quick_sort(array, n);
 
     printf("%d", array);
-    
+
     return 0;
 }

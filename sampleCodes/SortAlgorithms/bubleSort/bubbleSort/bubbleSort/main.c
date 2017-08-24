@@ -12,7 +12,10 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
 
-    int array [] = {14,33,27,35,10};
+
+    int array [] = {54,26,93,17,77,31,44,55,20};
+
+
     bubbleSort (array, (sizeof(array)/sizeof(int)));
 
     printf("Hello, World!\n");
