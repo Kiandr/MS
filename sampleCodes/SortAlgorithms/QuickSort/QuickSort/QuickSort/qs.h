@@ -11,5 +11,5 @@
 
 
 int *Qs(const int *arrayHeader, int Length );
-
+void quick_sort (int *a, int n) ;
 #endif /* qs_h */
