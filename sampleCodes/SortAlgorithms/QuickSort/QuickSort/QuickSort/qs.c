@@ -74,11 +74,17 @@ int *Qss(const int *arrayHeader, int Length ){
 
 
 void quick_sort (int *array, int length) {
+
+    // known condution to return back.
     if (length < 2)
         return;
+
+    // new concept for me.
     int prtP = array[length / 2];
     int *prtL = array;
-    int *prtR = array + length - 1;
+    // should reduce the 1 becuase array stars from 0.
+    int *prtR = array + (length - 1);
+
     while (prtL <= prtR) {
         if (*prtL < prtP) {
             prtL++;
@@ -94,6 +100,11 @@ void quick_sort (int *array, int length) {
             prtR--;
         }
     }
-    quick_sort(array, prtR - array + 1);
-    quick_sort(prtL, array + length - prtL);
+
+    // this is a new concept to me as well
+    int prtLeftLenghOfRemainingArray  = (int)(prtR - (array + 1)); // substract two pointers in a single array to find out their distance. its a hex calculation
+    int prtRightLenghOfRemainingArray = (int)((array + length) - prtL);
+
+    quick_sort(array, prtLeftLenghOfRemainingArray);
+    quick_sort(prtL,  prtRightLenghOfRemainingArray);
 }
