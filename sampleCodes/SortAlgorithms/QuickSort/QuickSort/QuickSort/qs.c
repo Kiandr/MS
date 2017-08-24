@@ -73,27 +73,27 @@ int *Qss(const int *arrayHeader, int Length ){
 }
 
 
-void quick_sort (int *a, int n) {
-    if (n < 2)
+void quick_sort (int *array, int length) {
+    if (length < 2)
         return;
-    int p = a[n / 2];
-    int *l = a;
-    int *r = a + n - 1;
-    while (l <= r) {
-        if (*l < p) {
-            l++;
+    int prtP = array[length / 2];
+    int *prtL = array;
+    int *prtR = array + length - 1;
+    while (prtL <= prtR) {
+        if (*prtL < prtP) {
+            prtL++;
         }
-        else if (*r > p) {
-            r--;
+        else if (*prtR > prtP) {
+            prtR--;
         }
         else {
-            int t = *l;
-            *l = *r;
-            *r = t;
-            l++;
-            r--;
+            int t = *prtL;
+            *prtL = *prtR;
+            *prtR = t;
+            prtL++;
+            prtR--;
         }
     }
-    quick_sort(a, r - a + 1);
-    quick_sort(l, a + n - l);
+    quick_sort(array, prtR - array + 1);
+    quick_sort(prtL, array + length - prtL);
 }

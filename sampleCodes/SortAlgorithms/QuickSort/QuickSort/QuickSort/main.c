@@ -10,14 +10,10 @@
 #include "qs.h"
 
 int main(int argc, const char * argv[]) {
+
     int array [] = {54,26,93,17,77,31,44,55,20};
-
-
-	    int n = sizeof (array) / sizeof (int);
-	    quick_sort(array, n);
-	    printf("%d", array);
-
-    // insert code here...
-    printf("Hello, World!\n");
+    int n = sizeof (array) / sizeof (int);
+    quick_sort(array, n);
+    printf("%d", array);
     return 0;
 }
