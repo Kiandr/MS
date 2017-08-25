@@ -12,4 +12,5 @@
 #include <stdio.h>
 isPrime(int a);
 int isPrimeWithTwoVaribles	(int numberToBeTested, int startOfComparision);
+float testOperation(int *x);
 #endif /* pn_h */

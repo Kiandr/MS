@@ -16,5 +16,11 @@ int main(int argc, const char * argv[]) {
     for (int i=0;i<length;i++){
     printf("%d\n",(int)isPrimeWithTwoVaribles(*prtA++, 2));
     }
+
+
+    for ( int j=0; j<10;j++){
+        printf("%f\n",(float) testOperation(&j));
+
+    }
         return 0;
 }

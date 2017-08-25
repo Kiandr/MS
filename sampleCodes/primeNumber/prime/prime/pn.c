@@ -38,3 +38,10 @@ int isPrimeWithTwoVaribles	(int numberToBeTested, int startOfComparision){
     return 0;
 
 };
+
+float testOperation(int *x){
+
+    float result = *x%2;
+
+    return result;
+}
