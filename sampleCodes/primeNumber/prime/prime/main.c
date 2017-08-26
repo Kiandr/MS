@@ -10,7 +10,7 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int array[] = {23};
+    int array[] = {3,7,11,10};
     int *prtA = array;
     int length = sizeof(array)/sizeof(int);
     for (int i=0;i<length;i++){
@@ -18,9 +18,9 @@ int main(int argc, const char * argv[]) {
     }
 
 
-    for ( int j=0; j<10;j++){
-        printf("%f\n",(float) testOperation(&j));
+//    for ( int j=0; j<10;j++){
+//        printf("%f\n",(float) testOperation(&j));
 
-    }
+//    }
         return 0;
 }
