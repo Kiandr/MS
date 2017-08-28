@@ -7,28 +7,10 @@
 //
 
 #include "pn.h"
-int isPrime(int a){
 
+
+int isPrimeWithTwoVaribles	(int numberToBeTested, int divider){
 /*
- Author: Kian D.Rad 
- Date: August 26th2017
- README: prime number is x which x%x == 1 and x%1 = x
-         That is a number that could be divided only with itself and 1
- */
-
-
-    return 0;
-};
-
-
-int isPrimeWithTwoVaribles	(int numberToBeTested, int startOfComparision){
-
-    float comparision = (numberToBeTested%startOfComparision);
-
-    //while (numberToBeTested>=startOfComparision &&startOfComparision>=2){
-
-
-    /*
      Auhor: Kian D.Rad
      Date: August 25th2017
      README: 
@@ -39,21 +21,30 @@ int isPrimeWithTwoVaribles	(int numberToBeTested, int startOfComparision){
      3- Any other case: wheren the divider is going to be 7,6,5,4,3,2,1 0 when 0 function returns.
 
      */
-    if (comparision==1)
+
+    // known YES
+    if ((numberToBeTested % divider) == 1)
         return 1;
 
-    if (numberToBeTested%startOfComparision ==0)
+    // known NO
+    if ((numberToBeTested % divider) == 0)
         return 0;
 
-        else {
-            //startOfComparision = startOfComparision+1;
+    // eveything else
+    else {
 
-            return isPrimeWithTwoVaribles (numberToBeTested,  startOfComparision-1);
+
+            return isPrimeWithTwoVaribles (numberToBeTested,  divider);
         }
-   // }
     return 0;
 
 };
+
+
+
+
+
+
 
 float testOperation(int *x){
 
