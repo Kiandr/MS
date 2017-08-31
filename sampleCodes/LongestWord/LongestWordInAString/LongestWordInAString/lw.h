@@ -11,5 +11,5 @@
 
 #include <stdio.h>
 char *LongestWord(char str[]);
-
+void FindLongestWordWithinCharArray (const char *charArray);
 #endif /* lw_h */

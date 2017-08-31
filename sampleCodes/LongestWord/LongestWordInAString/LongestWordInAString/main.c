@@ -9,8 +9,13 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    char array []="KIAN THISISANEWTEST RAD";
-    LongestWord(array);
-    printf("Hello, World!\n");
+    //char array []="KIAN DAVOUDI RAD KD";
+    //LongestWord(array);
+    FindLongestWordWithinCharArray("KIAN DAVOUDI");
+
+    FindLongestWordWithinCharArray("KIAN DAVOUDI RAD");
+    FindLongestWordWithinCharArray("K D RAD");
+    FindLongestWordWithinCharArray(" K D R");
+
     return 0;
 }

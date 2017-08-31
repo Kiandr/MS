@@ -70,3 +70,66 @@ char *LongestWord(char str[]){
 
 
 }
+
+typedef struct {
+    int l;
+    char *prtS;
+    char *prtE;
+    char *array;
+
+}node;
+
+
+void CopyToNewArray (char *prt,char *prtPrev){
+
+    char *prtS = prtPrev;
+    char *prtE = prt;
+    while (prtS<=prtE)
+        printf("%c",*prtS++);
+    printf("%\n",*prtS++);
+
+};
+void FindLongestWordWithinCharArray (const char *charArray){
+
+    char *prt = charArray;
+    char *prtPrev = prt;
+    int gl =0;
+    prtPrev = prt-gl;
+
+
+    while (*prt != '\0' || *prt != ' '){
+
+        if (*prt == ' ')
+            prt++;
+        if (*prt== '\0')
+            return;
+        else {
+
+
+            int l = 0;
+
+
+            while (*prt != ' '){
+                if (*prt == '\0')
+                    return;
+                prt++;
+                l++;
+            }
+            if (l>gl){
+                gl = l;
+            prtPrev = prt-gl;
+
+                        CopyToNewArray (prt,prtPrev);
+            }
+            
+            
+            
+        }
+        
+    }
+    
+    
+    
+}
+
+
