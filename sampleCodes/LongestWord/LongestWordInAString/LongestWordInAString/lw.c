@@ -25,7 +25,8 @@ char *LongestWord(char str[]){
         l++;
     }
 
-
+    char prtNewWord [l];
+    char *prtN = prtNewWord;
     int i =0;
 
     while (i<l){
@@ -35,22 +36,30 @@ char *LongestWord(char str[]){
         {
             while (*prtB !='\0' && *prtB !=' ')
             {
-                printf("%c\n", *prtB);
+
                 count++;
-                prtB++;
+
+                *prtN++ = *prtB++;
+
                 i++;
             }
             if (count>globalCounter)
+            {
                 globalCounter = count;
+                *++prtN = '\0';
+            }
             else count = 0;
             
         }
         count = 0;
         i++;
         prtB++;
+        for (int j=0;j<l;j++)
+        prtN [j] = ' ';
     }
 
-    printf("Length of %s is %d \n", str,globalCounter);
+
+    printf("%s",prtNewWord);
 
 
 

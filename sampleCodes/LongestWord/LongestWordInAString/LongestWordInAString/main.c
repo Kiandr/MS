@@ -9,7 +9,7 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    char array []="KIAN DAVOUDIRAD";
+    char array []="KIAN THISISANEWTEST RAD";
     LongestWord(array);
     printf("Hello, World!\n");
     return 0;
