@@ -7,15 +7,27 @@
 //
 
 #include <stdio.h>
+#include "lw.h"
 
 int main(int argc, const char * argv[]) {
     //char array []="KIAN DAVOUDI RAD KD";
     //LongestWord(array);
-    FindLongestWordWithinCharArray("KIAN DAVOUDI");
+  //  FindLongestWordWithinCharArray("KIAN DAVOUDI");
 
-    FindLongestWordWithinCharArray("KIAN DAVOUDI RAD");
-    FindLongestWordWithinCharArray("K D RAD");
-    FindLongestWordWithinCharArray(" K D R");
+  //  FindLongestWordWithinCharArray("KIAN DAVOUDI");
+    //FindLongestWordWithinCharArray("K D RAD");
+   // FindLongestWordWithinCharArray(" K D R");
+
+    node *n =(node*)(malloc(sizeof(node)));
+    char *prtN = NULL;
+
+     n = (node*) FindLongestWordWithinCharArrayOne ("KIAN DAVOUDI RAD");
+     prtN = n->prt;
+
+
+
+    for (int i=0;i<n->l; i++)
+        printf("%c",*(prtN+i));
 
     return 0;
 }

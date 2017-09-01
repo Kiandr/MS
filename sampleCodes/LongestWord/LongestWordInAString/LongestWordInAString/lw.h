@@ -10,6 +10,12 @@
 #define lw_h
 
 #include <stdio.h>
+typedef struct {
+    int l;
+    char *prt;
+}node;
+
 char *LongestWord(char str[]);
 void FindLongestWordWithinCharArray (const char *charArray);
+node* FindLongestWordWithinCharArrayOne (const char *charArray);
 #endif /* lw_h */

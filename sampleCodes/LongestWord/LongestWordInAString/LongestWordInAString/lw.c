@@ -49,13 +49,13 @@ char *LongestWord(char str[]){
                 *++prtN = '\0';
             }
             else count = 0;
-            
+
         }
         count = 0;
         i++;
         prtB++;
         for (int j=0;j<l;j++)
-        prtN [j] = ' ';
+            prtN [j] = ' ';
     }
 
 
@@ -71,13 +71,7 @@ char *LongestWord(char str[]){
 
 }
 
-typedef struct {
-    int l;
-    char *prtS;
-    char *prtE;
-    char *array;
 
-}node;
 
 
 void CopyToNewArray (char *prt,char *prtPrev){
@@ -95,40 +89,64 @@ void FindLongestWordWithinCharArray (const char *charArray){
     char *prtPrev = prt;
     int gl =0;
     prtPrev = prt-gl;
+    int l = 0;
+    while (*prt!='\0'){
+        while (*prt != NULL && (*prt != ' '))
+        {
 
-
-    while (*prt != '\0' || *prt != ' '){
-
-        if (*prt == ' ')
             prt++;
-        if (*prt== '\0')
-            return;
-        else {
-
-
-            int l = 0;
-
-
-            while (*prt != ' '){
-                if (*prt == '\0')
-                    return;
-                prt++;
-                l++;
-            }
-            if (l>gl){
-                gl = l;
-            prtPrev = prt-gl;
-
-                        CopyToNewArray (prt,prtPrev);
-            }
-            
-            
-            
+            l++;
         }
-        
+
+        if (l>gl){
+            gl = l;
+            prtPrev = prt-gl;
+            CopyToNewArray (prt,prtPrev);
+            prt++;
+            prtPrev = prt;
+            l=0;
+        }
+        else prt++;
     }
     
-    
+}
+
+
+
+
+node* FindLongestWordWithinCharArrayOne (const char *charArray){
+
+    char *prt = charArray;
+    char *prtPrev = prt;
+    int gl =0;
+    prtPrev = prt-gl;
+    int l = 0;
+
+    node *newNode = (node*)(malloc(sizeof(node)));
+    while (*prt!='\0'){
+        while (*prt != NULL && (*prt != ' '))
+        {
+
+            prt++;
+            l++;
+        }
+
+        if (l>gl){
+            gl = l;
+            prtPrev = prt-gl;
+            CopyToNewArray (prt,prtPrev);
+            newNode->l = gl;
+            newNode->prt = prtPrev;
+            
+            prt++;
+            prtPrev = prt;
+            l=0;
+        }
+        else prt++;
+    }
+
+
+    return newNode;
     
 }
 
