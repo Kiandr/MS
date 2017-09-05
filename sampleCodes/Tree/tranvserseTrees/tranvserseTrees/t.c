@@ -10,47 +10,48 @@
 #include "stdio.h"
 #include "stdlib.h"
 
+node *buildNewNode (node * root, node *newNode){
 
 
-node *initTree(void){
+    newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->val = newNode->val;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    newNode->root = root;
+    return newNode;
+}
 
-    node *root  = (malloc(sizeof( node)));
-    root->left  = NULL;
-    root->right = NULL;
-    root->root  = NULL;
 
-    return root;
-};
-
-void addNode(node * root, node * node){
+node* addNode(node * root, node * node){
 
     struct node * prtR  = root;
     struct node * prtN = node;
 
-    if (root->left != NULL && root->right){
+    if (root == NULL )
+        return root;
+    if (root->left != NULL && & root->right!=NULL){
 
-        if ((int*)prtN->val > (int*)prtR->val)
+        if ( prtN->val > prtR->val)
             addNode(prtR->left, node);
 
         else
             addNode(prtR->right, node);
 
     }
+    else {
 
-    if ((int*)prtN->val > (int*)prtR->val)
-    {
-        prtR->left = (struct node*)malloc(sizeof(struct node));
-        *((struct node*)(prtR->left)->val) = (int*)prtN->val;
-        prtR->left->left = NULL;
-        prtR->left->right = NULL;
-        prtR->left->root = prtR;
 
+        if (prtR->val >prtN->val)
+            prtR->left = buildNewNode(prtR, prtN);
+
+
+
+        if (prtR->val <prtN->val)
+            prtR->right = buildNewNode(prtR,prtN);
     }
 
-    else
-        addNode(prtR->right, node);
-
-
-
-
+    return prtR;
+    
+    
+    
 };

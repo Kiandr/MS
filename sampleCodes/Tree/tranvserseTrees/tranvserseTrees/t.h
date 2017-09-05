@@ -19,7 +19,7 @@ typedef struct node {
     struct node *root;
 }node;
 
-node *initTree(void);
 
+node* addNode(node * root, node * node);
 
 #endif /* t_h */
