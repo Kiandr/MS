@@ -32,15 +32,15 @@ void LetterChanges(char * str[]) {
     while (*prt!='\0'){
         if ((*prt>='a' && *prt<='z') || (*prt>='A' && *prt<='Z'))
         {
-                int temp = *prt;
-                /*a, e, i, o, u*/
+            int temp = *prt;
+            /*a, e, i, o, u*/
             if (*prt=='a'|| *prt=='e' || *prt=='i' || *prt=='o' || *prt=='u' ){
                 *prtN = temp-32;
             }
 
 
             else *prtN = temp+1;
-            printf ("[ %c]\n",*prtN);
+            //   printf ("[ %c]\n",*prtN);
             prtN++;
             prt++;
         }
@@ -54,9 +54,9 @@ void LetterChanges(char * str[]) {
 
     }
 
-
-    // code goes here
-    printf("%s", newWork);
+    for (int i = 0; i<length;i++)
+        // code goes here
+        printf("%c", newWork[i]);
     
 };
 
