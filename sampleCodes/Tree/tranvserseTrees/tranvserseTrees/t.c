@@ -10,48 +10,50 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-node *buildNewNode (node * root, node *newNode){
+node *buildNewNode (node * root, node *incomingNode){
 
 
-    newNode = (struct node*)malloc(sizeof(struct node));
-    newNode->val = newNode->val;
+
+    node* newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->val = incomingNode->val;
     newNode->left = NULL;
     newNode->right = NULL;
     newNode->root = root;
+
     return newNode;
 }
 
-
 node* addNode(node * root, node * node){
 
-    struct node * prtR  = root;
+    struct node * prtRoot  = root;
     struct node * prtN = node;
 
     if (root == NULL )
         return root;
+
     if (root->left != NULL && & root->right!=NULL){
 
-        if ( prtN->val > prtR->val)
-            addNode(prtR->left, node);
+        if ( prtN->val > prtRoot->val)
+            return addNode(prtRoot->right, node);
 
-        else
-            addNode(prtR->right, node);
+        else if  ( prtN->val < prtRoot->val)
+           return  addNode(prtRoot->left, node);
 
     }
     else {
 
 
-        if (prtR->val >prtN->val)
-            prtR->left = buildNewNode(prtR, prtN);
+        if (prtRoot->val >prtN->val)
+            prtRoot->left = buildNewNode(prtRoot, prtN);
 
 
 
-        if (prtR->val <prtN->val)
-            prtR->right = buildNewNode(prtR,prtN);
+        else if (prtRoot->val <prtN->val)
+            prtRoot->right = buildNewNode(prtRoot,prtN);
     }
 
-    return prtR;
+   // return prtRoot;
     
+    return 0;
     
-    
-};
+}
