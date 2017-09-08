@@ -12,8 +12,6 @@
 
 node *buildNewNode (node * root, node *incomingNode){
 
-
-
     node* newNode = (struct node*)malloc(sizeof(struct node));
     newNode->val = incomingNode->val;
     newNode->left = NULL;
