@@ -74,5 +74,12 @@ void countLongestWorld (char header){
 
 
 
+void LetterCapitalize(char * str[]) {
+
+    // code goes here
+    printf("%s", str);
+
+}
+
 
 

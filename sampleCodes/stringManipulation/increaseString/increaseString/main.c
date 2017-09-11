@@ -15,8 +15,12 @@ int main(int argc, const char * argv[]) {
     setvbuf(stdout, NULL, _IONBF, 0);
     char str [] = "hello*3";
     // keep this function call here
-    LetterChanges("Argument goes here");
+//    LetterChanges("Argument goes here");
 
+    int val []= {3};
+
+    //SimpleAdding(val);
+     LetterCapitalize("kian davoudi");
     return 0;
 }
 /*
@@ -27,5 +31,12 @@ int main(int argc, const char * argv[]) {
 
  Input:"fun times!"
  Output:"gvO Ujnft!"
+ 
+ 
+ Input:"hello world"
+ Output:"Hello World"
+
+ Input:"i ran there"
+ Output:"I Ran There"
 
  */

@@ -13,4 +13,6 @@
 
 void LetterChanges(char * str[]);
 
+void SimpleAdding(int num[]);
+void LetterCapitalize(char * str[]) ;
 #endif /* is_h */
