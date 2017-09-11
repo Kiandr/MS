@@ -11,6 +11,21 @@
 
 int main(int argc, const char * argv[]) {
 
-    letterCapitalized("This is the argument");
+  //  letterCapitalized("This is the argument\n");
+    CapitalizeACharacter("abcdefgh");
+    letterCapitalized("hello world");
+    letterCapitalized("i ran there");
+
+/*
+ Input:"hello world"
+ Output:"Hello World"
+
+ Input:"i ran there"
+ Output:"I Ran There"
+*/
+
+
+
+
     return 0;
 }

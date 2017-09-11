@@ -11,5 +11,5 @@
 
 #include <stdio.h>
 void letterCapitalized (char str[]);
-
+void CapitalizeACharacter(char *str);
 #endif /* lc_h */
