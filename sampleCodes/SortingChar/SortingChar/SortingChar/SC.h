@@ -11,4 +11,7 @@
 
 #include <stdio.h>
 
+
+void AlphabetSoup(char * str[]);
+
 #endif /* SC_h */

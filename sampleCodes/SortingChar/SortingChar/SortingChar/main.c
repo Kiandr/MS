@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+ AlphabetSoup("KIAN");
+
     return 0;
 }

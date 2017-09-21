@@ -7,3 +7,30 @@
 //
 
 #include "SC.h"
+void AlphabetSoup(char * str[]) {
+
+    char *prtLen = str;
+    int l = 0;
+    char prtSmallerChar[1];
+    *prtSmallerChar = *str;
+
+    while (*prtLen !='\0')
+    {
+        if (*prtSmallerChar==*prtLen)
+            *prtSmallerChar;
+        else if (*prtSmallerChar<*prtLen)
+            *prtSmallerChar=*prtSmallerChar;
+        else if (*prtSmallerChar>*prtLen)
+            *prtSmallerChar=*prtLen;
+
+        l++;
+        prtLen++;
+    }
+
+
+    
+
+    // code goes here
+    printf("%c", *prtSmallerChar);
+
+}
