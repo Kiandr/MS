@@ -13,5 +13,6 @@
 
 
 void AlphabetSoup(char * str[]);
+void bubbleSort (char* headerToArray, int lenthOFArray);
 
 #endif /* SC_h */

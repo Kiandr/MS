@@ -10,6 +10,9 @@
 #include <stdlib.h>
 
 int main(int argc, const char * argv[]) {
- AlphabetSoup("KCN");
+   // AlphabetSoup("KCN");
+    char header []= {"DCBA"};
+
+     bubbleSort (header, 4);
     return 0;
 }

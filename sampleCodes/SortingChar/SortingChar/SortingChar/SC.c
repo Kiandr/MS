@@ -30,3 +30,30 @@ void AlphabetSoup(char * str[]) {
     printf("%c", *prtSmallerChar);
 
 }
+
+void bubbleSort (char* headerToArray, int lenthOFArray){
+    for (int i=0; i<lenthOFArray; i++){
+
+        char *prt  = headerToArray;
+        char *prtN = headerToArray+1;
+        char *prtE = headerToArray + lenthOFArray-1  ;
+
+        /* should make sure that prt and prtE both have been takes from the same malloc*/
+
+        while (prt<prtE)
+        {
+            if (*prt>*prtN)
+            {
+                char t = *prt;
+                *prt = *prtN;
+                *prtN = t;
+            }
+
+            prt++;
+            prtN++;
+
+        }
+    }
+
+    printf("%s",headerToArray);
+};
