@@ -16,11 +16,7 @@ void AlphabetSoup(char * str[]) {
 
     while (*prtLen !='\0')
     {
-        if (*prtSmallerChar==*prtLen)
-            *prtSmallerChar;
-        else if (*prtSmallerChar<*prtLen)
-            *prtSmallerChar=*prtSmallerChar;
-        else if (*prtSmallerChar>*prtLen)
+         if (*prtSmallerChar>*prtLen)
             *prtSmallerChar=*prtLen;
 
         l++;

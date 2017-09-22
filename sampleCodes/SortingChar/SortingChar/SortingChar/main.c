@@ -10,7 +10,6 @@
 #include <stdlib.h>
 
 int main(int argc, const char * argv[]) {
- AlphabetSoup("KIAN");
-
+ AlphabetSoup("KCN");
     return 0;
 }
