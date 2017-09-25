@@ -33,12 +33,11 @@ for (int j =0; j<l; j++){
             prtN++;
             prtNext++;
 
-
-
         }
 
     }
 }
+
     printf("%s\n",str);
 
 }
