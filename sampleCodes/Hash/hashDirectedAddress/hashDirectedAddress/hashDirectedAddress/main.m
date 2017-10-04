@@ -157,6 +157,11 @@ void printTable( node *header, int len){
 
 }
 
+
+
+
+
+
 node *hashSearch (node * header,node *nNode){
 
 /*
@@ -199,6 +204,27 @@ node *hashSearch (node * header,node *nNode){
 }
 
 
+
+
+bool deleteHash (node * header,node *nNode){
+    /*
+     * Author: Kian D.Rad
+     * Date Oct4th 2017
+     * ReadMe: Delete operation, finds the node, and then wipes out the content, which is data only.
+     */
+
+
+    node *sItem = hashSearch(header, nNode);
+
+    if (sItem!= NULL){
+        sItem->data = NULL;
+        return 1;
+    }
+
+        return 0;
+}
+
+
 int main(int argc, const char * argv[]) {
 
     int lenOfTable = 100;
@@ -216,5 +242,15 @@ int main(int argc, const char * argv[]) {
     node *seachedItem = hashSearch(hashHeader, newNode);
     if (sizeof(newNode->data) == sizeof(seachedItem->data))
         printf(" prtH = %p | prtH->data=%s | prtH->key=%d |   prtH->next=%p, prtH->prev=%p *****SUCCESS****\n", seachedItem, seachedItem->data , seachedItem->key, seachedItem->next, seachedItem->prev);
+
+
+    deleteHash (hashHeader,newNode);
+
+    node *seachedItemTwo = hashSearch(hashHeader, newNode);
+    if (seachedItemTwo->data)
+        printf(" prtH = %p | prtH->data=%s | prtH->key=%d |   prtH->next=%p, prtH->prev=%p *****Delete FAILED****\n", seachedItemTwo, seachedItemTwo->data , seachedItemTwo->key, seachedItemTwo->next, seachedItemTwo->prev);
+    else if (seachedItemTwo->data==NULL)
+        printf("Delete *****SUCCESS****");
+
     return 0;
 }
