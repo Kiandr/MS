@@ -7,8 +7,10 @@
 //
 #define INT2VOIDP(i) (void*)(uintptr_t)(i)
 
-#import <Foundation/Foundation.h>
+
+
 #include "stdio.h"
+#include "stdbool.h"
 
 
 /*
@@ -61,7 +63,7 @@ node* initHeader(int len) {
         prtH->key = i;
         prtH->data = NULL;
         prtH->prev = prtPrev;
-        prtH->next =  (node*) malloc(sizeof(node*));;
+        prtH->next =  (node*) malloc(sizeof(node*));
         prtH->next->prev = prtH;
         // Keep track of the prev pointer. Debugger!
         printf(" prtH = %p | prtH->key=%d |   prtH->next=%p, prtH->prev=%p\n", prtH, prtH->key, prtH->next, prtH->prev);
@@ -149,7 +151,7 @@ void printTable( node *header, int len){
 
 int main(int argc, const char * argv[]) {
 
-    int lenOfTable = 15;
+    int lenOfTable = 1000;
     node* hashHeader = initHeader(lenOfTable);
 
     node *newNode = (node*)malloc(sizeof(node));
