@@ -35,8 +35,18 @@ typedef struct node{
  * ReadMe: This is a simpel function, this could be very well desinged. For now I am using a simple and known function.
  */
 
-int hashCode(int key){
-    return key * 1;
+int hashCode(char * data){
+
+    char *prt = data;
+    int key = 0;
+    if (!data)
+        return 0;
+    else {
+
+        while (*prt!='\0') { prt++; key++;}
+    }
+    return key;
+
 }
 
 
@@ -94,7 +104,7 @@ bool insertHash (node *header, node *aNode){
         /*
          this method will tell you how many nodes do you have to move forward.
          */
-       int index = hashCode(aNode->key);
+       int index = hashCode(aNode->data);
 
         while (prtH->key != index && prtH->next !=NULL)
         {
@@ -147,20 +157,64 @@ void printTable( node *header, int len){
 
 }
 
+node *hashSearch (node * header,node *nNode){
+
+/*
+ * Author: Kian D.Rad
+ * Date: Oct 4th 2017
+ * ReadMe: the search shall be O(1)
+ *
+ */
+
+
+    if (!header)
+        return NULL;
+
+
+    node *prtH = header;
+
+    int debugger = 0;
+
+    while (prtH->key != (hashCode(nNode->data)) &&prtH->next != NULL && prtH != NULL) {
+        prtH=prtH->next;
+        debugger++;
+
+    }
+    if (prtH->key == (int)hashCode(nNode->data))
+
+        return prtH;
+
+    else
+        return 0;
+
+
+//    int index = hashCode(nNode->data);
+//
+//    node *p1 = header;
+//    node *p2 = p1->next;
+//
+//    ptrdiff_t bytes = ((node *)p2) - ((node *)p1);
+//    int x = bytes/sizeof(node);
+//    node *returningItem =  (node*)header+bytes;
+}
 
 
 int main(int argc, const char * argv[]) {
 
-    int lenOfTable = 10000;
+    int lenOfTable = 100;
     node* hashHeader = initHeader(lenOfTable);
 
     node *newNode = (node*)malloc(sizeof(node));
 
     newNode->data = "KIAN";
-    newNode->key = 5;
+    //newNode->key = 5;
     insertHash (hashHeader, newNode);
 
     printTable(hashHeader, lenOfTable);
 
+
+    node *seachedItem = hashSearch(hashHeader, newNode);
+    if (sizeof(newNode->data) == sizeof(seachedItem->data))
+        printf(" prtH = %p | prtH->data=%s | prtH->key=%d |   prtH->next=%p, prtH->prev=%p *****SUCCESS****\n", seachedItem, seachedItem->data , seachedItem->key, seachedItem->next, seachedItem->prev);
     return 0;
 }
