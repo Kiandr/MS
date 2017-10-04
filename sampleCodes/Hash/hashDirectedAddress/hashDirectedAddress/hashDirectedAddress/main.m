@@ -12,12 +12,13 @@
 
 
 /*
- Auhtor: Kian D.Rad
- Date: Oct 3rd 2017
- ReadMe: Basic data sctructur for a has function. There is a hash index and hash data.
+ * Auhtor: Kian D.Rad
+ * Date: Oct 3rd 2017
+ * ReadMe: Basic data sctructur for a has function. There is a hash index and hash data.
  */
 typedef struct node{
 
+    char * data;
     int key;
     struct node* prev;
     struct node* next;
@@ -33,7 +34,7 @@ typedef struct node{
  */
 
 int hashCode(int key){
-    return key * 10;
+    return key * 1;
 }
 
 
@@ -51,25 +52,19 @@ node* initHeader(int len) {
     node * header = (node*) malloc(sizeof(node*));
 
     node *prtH = header;
-    node* htoPrt = prtH;
     int n = len;
-    int i =1;
+    int i = 1;
     node* prtPrev = NULL;
 
-//    prtH = (node*) malloc(sizeof(node*));
-//    prtH->key =0;
-//    prtH->prev = NULL;
-//    prtH->next = NULL;
-
     while (n){
-//        prtH = (node*) malloc(sizeof(node*));
+
         prtH->key = i;
-        //*prtH->data = '\0';
+        prtH->data = NULL;
         prtH->prev = prtPrev;
         prtH->next =  (node*) malloc(sizeof(node*));;
         prtH->next->prev = prtH;
-        // Keep track of the prev pointer.
-         printf(" prtH = %p | prtH->key=%d |   prtH->next=%p, prtH->prev=%p\n", prtH, prtH->key, prtH->next, prtH->prev);
+        // Keep track of the prev pointer. Debugger!
+        printf(" prtH = %p | prtH->key=%d |   prtH->next=%p, prtH->prev=%p\n", prtH, prtH->key, prtH->next, prtH->prev);
         prtPrev = prtH;
         prtH=prtH->next;
         i++;
@@ -82,38 +77,88 @@ node* initHeader(int len) {
 
 
 
-
+/*
+ * Author: Kian D.Rad
+ * Date: Oct3rd2017
+ * ReadMe:
+ *
+ */
 bool insertHash (node *header, node *aNode){
 
+    node *prtH = header;
     if (!header)
         return 0;
     else {
         /*
          this method will tell you how many nodes do you have to move forward.
          */
-        int index = hashCode(aNode->key);
+       int index = hashCode(aNode->key);
+
+        while (prtH->key != index && prtH->next !=NULL)
+        {
+            prtH = prtH->next;
+
+        }
+        if (prtH->next == NULL)
+            return 0;
+        else if (prtH->key == index) {
+            int l =0;
+            char *prtN = aNode->data;
+            while (*prtN != '\0')
+            {
+                l++;
+                prtN++;
+            }
+
+            prtH->data = (char*)malloc(sizeof(char)*l);
+            char *prtD = prtH->data;
+            prtN = prtN-l;
+            while (*prtN != '\0')
+            {
+
+                *prtD++ = *prtN++  ;
+            }
 
 
+
+
+
+        }
 
     }
-
-
-
-
-
 
     return 1;
 }
 
 
+void printTable( node *header, int len){
 
+    node *prtH = header;
+    for (int i=0; i<len; i ++)
+    {
+
+        printf(" prtH = %p | prtH->data=%s | prtH->key=%d |   prtH->next=%p, prtH->prev=%p\n", prtH, prtH->data ,prtH->key, prtH->next, prtH->prev);
+        prtH=prtH->next;
+
+    }
+
+
+}
 
 
 
 int main(int argc, const char * argv[]) {
-    node* hashHeader = initHeader(3);
 
+    int lenOfTable = 15;
+    node* hashHeader = initHeader(lenOfTable);
 
+    node *newNode = (node*)malloc(sizeof(node));
+
+    newNode->data = "KIAN";
+    newNode->key = 5;
+    insertHash (hashHeader, newNode);
+
+    printTable(hashHeader, lenOfTable);
 
     return 0;
 }
