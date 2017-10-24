@@ -30,7 +30,7 @@ void AlphabetSoup(char * str) {
                     *prtNext = temp;
 
                 }
-                //    printf("%s\n",str);
+                // printf("%s\n",str);
                 prtN++;
                 prtNext++;
 
