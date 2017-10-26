@@ -51,7 +51,7 @@ void bubbleSortIntegerArray(int *head, int len)
     int const *prtToHeader = head;
     int *prtH = head;
     int *prtNext  = prtH+1;
-    //for (int i = 0; i<len;i++)
+    for (int i = 0; i<len;i++)
     {
       //  while (prtNext!=NULL)
         for (int j=1; j<len;j++){
@@ -68,8 +68,8 @@ void bubbleSortIntegerArray(int *head, int len)
              prtNext++;
 
         }
-      //  prtH = head+i;
-       // prtNext  = head+i+1;
+        prtH = prtToHeader+i;
+        prtNext  = prtToHeader+i;
 
     }
 
@@ -79,7 +79,7 @@ void bubbleSortIntegerArray(int *head, int len)
 int main(void) {
     char inpout [] = "coderbyte";
     //int inputArray[] = {5,4,3,2,1};
-    int inputArray[] = {1,3,2,4,5,6};
+    int inputArray[] = {1,3,2,5,4,6};
   //  AlphabetSoup(inpout);
     int len = sizeof(inputArray)/sizeof(int);
     bubbleSortIntegerArray(inputArray,len);
