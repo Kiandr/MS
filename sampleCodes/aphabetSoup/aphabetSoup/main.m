@@ -58,9 +58,9 @@ void bubbleSortIntegerArray(int *head, int len)
             if (*prtH > *prtNext)
             {
 
-             //   int temp = *prtH;
-              //  *prtH    = *prtNext;
-               // *prtNext = temp;
+                int temp = *prtH;
+                *prtH    = *prtNext;
+                *prtNext = temp;
 
             }
             printf("j= %d, prtH:%d prtNext:%d\n", j,*prtH,*prtNext);
