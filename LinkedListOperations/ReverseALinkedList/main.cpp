@@ -173,9 +173,9 @@ int main(){
     head = append(head, 14);
     head = append(head, 15);
     print(head);
-    // head = AddCycle(head,12);
+
     head = reverse(head);
-    //    printf(" is cycle or nor = [%d]", IsCycle(head));
+
     print(head);
     return 0;
 }
