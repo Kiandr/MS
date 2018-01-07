@@ -64,10 +64,19 @@ Node *Find(Node *head, int a){
 }
 
 
-bool remove(Node *head, int data){
+Node* remove(Node *head, int data){
     
     if (head==NULL)
-        return false;
+        return NULL;
+    else if (head->next != NULL && head->data == data){
+        Node *temp = head->next;
+        head->data = 0;
+        head->next = NULL;
+        head =temp;
+        return temp;
+    }
+    else if (head->next == NULL && head->data == data)
+        return NULL;
     else {
         Node *prtH = head;
         Node *prev = head;
@@ -82,21 +91,24 @@ bool remove(Node *head, int data){
                 prtH = prtH->next;
             }
         }
-        return true;
+        return head;
     }
 }
 
 int main(){
     Node *head  = NULL;
     head = append(head, 10);
-    append(head, 11);
-    append(head, 12);
-    append(head, 13);
+    head = append(head, 11);
+    head = append(head, 12);
+    head = append(head, 13);
     //print(head);
-    remove(head, 11);
+    head = remove(head, 10);
+    head = remove(head, 11);
+    head = remove(head, 12);
     print(head);
     
-    printf("Search for 12 returns [%d]\n",Find(head, 12)->data);
+    printf("Search for 12 returns [%p]\n",Find(head, 12));
+    printf("Search for 13 returns [%p]\n",Find(head, 13));
     
     
     return 0;
