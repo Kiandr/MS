@@ -58,21 +58,58 @@ node * append ( node * root, int data){
 void inOrderWalk(node *root){
 	
 	if (root==NULL)
-		return NULL;
+		return ;
 	
 	else {
-		node *prtR = head;
-		while (prtR->l != NULL && prtR->r != NULL){
+		node *prtR = root;
+	//	while (prtR->l != NULL && prtR->r != NULL){
 		inOrderWalk(prtR->l);
-		printf("%d\n", prtR-data);
+		printf("%d\n", prtR->data);
 		inOrderWalk(prtR->r);
-	}
+		//}
 
 		
 	}
 
 	
 }
+
+void priorOrderWalk(node *root){
+	
+	if (root==NULL)
+		return ;
+	
+	else {
+		node *prtR = root;
+		printf("%d\n", prtR->data);
+		inOrderWalk(prtR->l);
+		inOrderWalk(prtR->r);
+
+
+		
+	}
+
+	
+}
+
+
+void postOrderWalk(node *root){
+	
+	if (root==NULL)
+		return ;
+	
+	else {
+		node *prtR = root;
+
+		inOrderWalk(prtR->l);
+		inOrderWalk(prtR->r);
+		printf("%d\n", prtR->data);
+		
+	}
+
+	
+}
+
 
 
 int main(){
@@ -84,6 +121,11 @@ int main(){
     head = append(head, 6);
     head = append(head, 14);
     head = append(head, 4);
+	printf("inOrder\n");
     inOrderWalk(head);
+	printf("priorOrder\n");
+	priorOrderWalk(head);
+	printf("postOrder\n");
+	postOrderWalk(head);
     return 0;
 }

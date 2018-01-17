@@ -1,19 +1,19 @@
 #include <iostream>
 
-typedef struct node{
+typedef struct Node{
     int data;
-    struct node * l;
-    struct node * r;
-    struct node * root;
+    struct Node * left;
+    struct Node * right;
+    struct Node * root;
     
     
-}node;
+}Node;
 
 
-node * append ( node * root, int data){
+Node * append ( Node * root, int data){
     
     if (root == NULL){
-        root = new node();
+        root = new Node();
         root->l = NULL;
         root->root = NULL;
         root->r = NULL;
@@ -23,7 +23,7 @@ node * append ( node * root, int data){
     
     else {
         
-        node *prtR = root;
+        Node *prtR = root;
         while (prtR->r != NULL && prtR->l !=NULL)
         {
             if (prtR->data<data)
@@ -33,7 +33,7 @@ node * append ( node * root, int data){
         }
         if (prtR->r==NULL && prtR->data < data)
         {
-            prtR->r = new node();
+            prtR->r = new Node();
             prtR->r->data = data;
             prtR->r->l = NULL;
             prtR->r->r = NULL;
@@ -41,7 +41,7 @@ node * append ( node * root, int data){
         }
         else if (prtR->l == NULL && prtR->data>data)
         {
-            prtR->l = new node();
+            prtR->l = new Node();
             prtR->l->data = data;
             prtR->l->l = NULL;
             prtR->l->r = NULL;
@@ -54,29 +54,26 @@ node * append ( node * root, int data){
     
     
 }
-
-void inOrderWalk(node *root){
+void topView(Node* root){
 	
-	if (root==NULL)
-		return NULL;
-	
+	Node *prtR = root;
+	if (root == NULL)
+		return;
 	else {
-		node *prtR = head;
-		while (prtR->l != NULL && prtR->r != NULL){
-		inOrderWalk(prtR->l);
-		printf("%d\n", prtR-data);
-		inOrderWalk(prtR->r);
-	}
-
+		if (prtR->right != NULL)
+		{
+			printf("%d ",prtR->data);
+			topView(prtR->R);
+		}
 		
 	}
-
 	
 }
 
 
+
 int main(){
-    node * head = NULL;
+    Node * head = NULL;
     head = append(head, 10);
     head = append(head, 15);
     head = append(head, 5);
@@ -84,6 +81,8 @@ int main(){
     head = append(head, 6);
     head = append(head, 14);
     head = append(head, 4);
-    inOrderWalk(head);
+
+
+
     return 0;
 }
