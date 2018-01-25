@@ -47,3 +47,55 @@ node *lca(node *root, int v1,int v2)
     return prtR;
 }
 
+/*
+	Failed on this:
+8
+8 4 9 1 2 3 6 5
+1 2
+	
+*/
+node *lca(node *root, int a,int b)
+{
+	if (root == NULL) return NULL;
+	else {
+		node *prtR = root;
+		
+		while (prtR!=NULL)
+		{
+			if (prtR->data >a && prtR->data>b && prtR->left !=NULL)
+				prtR = prtR->left;
+			else if (prtR->data <a && prtR->data<b && prtR->right !=NULL)
+				prtR = prtR->right;
+			else return prtR;
+			
+		}
+	}
+	return root;
+}
+		
+		
+
+	
+	
+
+
+
+// PASSED THIS
+node *lca(node *root, int a,int b)
+{
+    node *prtR = root;
+	if (root == NULL) return NULL;
+	else {		
+		if (prtR!=NULL)
+		{
+			if (prtR->data >a && prtR-> data>b )
+				prtR = lca (prtR->left,a,b);
+			if (prtR->data <a && prtR->data<b )
+				prtR = lca (prtR->right,a,b);
+		}
+	}
+	return prtR;
+}
+
+
+
