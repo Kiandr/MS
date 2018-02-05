@@ -4,7 +4,6 @@ namespace Generic
 {
     public class linkedList<T>
     {
-
         public class node {
             public T data { get; set; }
             public node next { get; set; }

@@ -11,7 +11,7 @@ namespace Generic
         static void Main(string[] args)
         {
             var list = new linkedList<int>();
-            for (int i = 10; i < 20; i++)
+            for (int i = 1; i < 20; i++)
                 list.addNewNode(new linkedList<int>.node(i));
             list.printList();
         }
