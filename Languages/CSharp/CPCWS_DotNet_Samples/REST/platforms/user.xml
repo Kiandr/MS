@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<appSettings>
+	<!-- Replace ChangeMeAK with your USERNAME -->
+	<add key="username" value="ChangeMeAK" />
+	<!-- Replace ChangeMePW with your PASSWORD -->
+	<add key="password" value="ChangeMePW" />
+</appSettings>

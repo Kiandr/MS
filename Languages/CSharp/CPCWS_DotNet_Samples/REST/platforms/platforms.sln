@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetMerchantRegistrationInfo", "GetMerchantRegistrationInfo\GetMerchantRegistrationInfo.csproj", "{9AD40035-56A2-4DAF-A342-55E592BDE5DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "messages", "schema\messages\messages.csproj", "{F8EE8D61-CDD4-46C8-94DD-6693D8553C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "merchantregistration", "schema\merchantregistration\merchantregistration.csproj", "{7C09DB4F-227B-492C-89B8-979F2455A8F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetMerchantRegistrationToken", "GetMerchantRegistrationToken\GetMerchantRegistrationToken.csproj", "{228079F3-6794-4D5F-A99C-64DAB61D9DC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AD40035-56A2-4DAF-A342-55E592BDE5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD40035-56A2-4DAF-A342-55E592BDE5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD40035-56A2-4DAF-A342-55E592BDE5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD40035-56A2-4DAF-A342-55E592BDE5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EE8D61-CDD4-46C8-94DD-6693D8553C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EE8D61-CDD4-46C8-94DD-6693D8553C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EE8D61-CDD4-46C8-94DD-6693D8553C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EE8D61-CDD4-46C8-94DD-6693D8553C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C09DB4F-227B-492C-89B8-979F2455A8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C09DB4F-227B-492C-89B8-979F2455A8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C09DB4F-227B-492C-89B8-979F2455A8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C09DB4F-227B-492C-89B8-979F2455A8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228079F3-6794-4D5F-A99C-64DAB61D9DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228079F3-6794-4D5F-A99C-64DAB61D9DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228079F3-6794-4D5F-A99C-64DAB61D9DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228079F3-6794-4D5F-A99C-64DAB61D9DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
