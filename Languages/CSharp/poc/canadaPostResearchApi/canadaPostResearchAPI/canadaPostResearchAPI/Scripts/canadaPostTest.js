@@ -12,7 +12,7 @@ onload = function () {
 var callCanadaPost = function (incomingString) {
     
     canadaPostData.SearchTerm = $("#HomeAddress").val();
-    console.log(canadaPostData.SearchTerm.toString());
+   // console.log(canadaPostData.SearchTerm.toString());
     var url = canadaPostData.baseUrl
         + "&Key=" + canadaPostData.Key
         + "&SearchTerm=" + canadaPostData.SearchTerm
@@ -31,8 +31,19 @@ var handleData = function (data) {
     var dataModel = data.Items;
    // console.log(dataModel);
     for (var i = 0; i < dataModel.length ; i++)
+    {
         
         console.log(dataModel[i].Text + "," + dataModel[i].Description);
+        document.getElementById("showResult").innerHTML = dataModel[i].Text + "," + dataModel[i].Description;
+        document.getElementById("showResult2").innerHTML = dataModel[i+1].Text + "," + dataModel[i].Description;
+        document.getElementById("showResult3").innerHTML = dataModel[i+2].Text + "," + dataModel[i].Description;
+        document.getElementById("showResult4").innerHTML = dataModel[i+3].Text + "," + dataModel[i].Description;
+        document.getElementById("showResult5").innerHTML = dataModel[i+4].Text + "," + dataModel[i].Description;
+    }
+
+
+
+
 }
 
 
@@ -75,6 +86,7 @@ function AddressComplete_Interactive_Find_v2_10Begin(){
                 else {
                     debugger;
                     console.log(data);
+                    $("showResult").add
                     // PUT YOUR CODE HERE
                     //FYI: The output is a JS object (e.g. data.Items[0].Id), the keys being:
                     //Id
