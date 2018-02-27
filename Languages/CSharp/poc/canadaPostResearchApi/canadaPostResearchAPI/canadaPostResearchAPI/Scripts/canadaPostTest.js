@@ -75,13 +75,13 @@ function AddressComplete_Interactive_Find_v2_10Begin(){
         },
         function (data) {
             // Test for an error
-            if (data.Items.length == 1 && typeof (data.Items[0].Error) != "undefined") {
+            if (data.Items.length === 1 && typeof (data.Items[0].Error) !== "undefined") {
                 // Show the error message
                 alert(data.Items[0].Description);
             }
             else {
                 // Check if there were any items found
-                if (data.Items.length == 0)
+                if (data.Items.length === 0)
                     alert("Sorry, there were no results");
                 else {
                     debugger;
@@ -105,13 +105,13 @@ function AddressComplete_Interactive_Find_v2_10End(response) {
     console.log(response);
     res = response;
     // Test for an error
-    if (response.Items.length == 1 && typeof (response.Items[0].Error) != "undefined") {
+    if (response.Items.length === 1 && typeof (response.Items[0].Error) !== "undefined") {
         // Show the error message
         console.log(response.Items[0].Description);
     }
     else {
         // Check if there were any items found
-        if (response.Items.length == 0)
+        if (response.Items.length === 0)
             console.log("Sorry, there were no results");
         else {
             console.log(response);
@@ -149,7 +149,26 @@ webCamService.successCallback = function (stream) {
 webCamService.start = function () { };
 
 
+// Opera 8.0+
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 
+// Firefox 1.0+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+
+// Safari 3.0+ "[object HTMLElementConstructor]" 
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+// Internet Explorer 6-11
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+// Edge 20+
+var isEdge = !isIE && !!window.StyleMedia;
+
+// Chrome 1+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+// Blink engine detection
+var isBlink = (isChrome || isOpera) && !!window.CSS;
 
 
 
@@ -172,7 +191,7 @@ var video = document.querySelector('video');
     }
 
     video.addEventListener('click', snapshot, false);
-
+if (isFirefox || isEdge) {
     if (navigator.getUserMedia) {
         navigator.getUserMedia({ video: true, audio: true },
             function (stream) {
@@ -188,6 +207,24 @@ var video = document.querySelector('video');
     } else {
         console.log("getUserMedia not supported");
     }
+}
+// if chrome
+if (isChrome) {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then(function (stream) {
+            var videoTracks = stream.getVideoTracks();
+            console.log('Got stream with constraints:', { video: true, audio: true });
+            console.log('Using video device: ' + videoTracks[0].label);
+            stream.onended = function () {
+                console.log('Stream ended');
+            };
+            window.stream = stream; // make variable available to console
+            video.srcObject = stream;
+        })
+        .catch(function (error) {
+            // ...
+            console.log(error);
+        })
 
 
-
+}
